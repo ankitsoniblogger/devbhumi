@@ -11,17 +11,17 @@ const productLinks = [
 
 const companyLinks = [
   { href: '/about', label: 'About' },
-  { href: '#', label: 'Blog' },
-  { href: '#', label: 'Press' },
-  { href: '#', label: 'Careers' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/press', label: 'Press' },
+  { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
 ]
 
 const legalLinks = [
-  { href: '#', label: 'Privacy Policy' },
-  { href: '#', label: 'Terms of Service' },
-  { href: '#', label: 'Cookie Policy' },
-  { href: '#', label: 'DPDP Compliance' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms-of-service', label: 'Terms of Service' },
+  { href: '/cookie-policy', label: 'Cookie Policy' },
+  { href: '/dpdp-compliance', label: 'DPDP Compliance' },
 ]
 
 export function Footer() {
