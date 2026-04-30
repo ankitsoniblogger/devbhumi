@@ -1,139 +1,116 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Presentation } from 'lucide-react'
+import { Menu, Presentation, X } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 const links = [
-  { href: '/features', label: 'Features' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/roadmap', label: 'Roadmap' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#difference', label: 'Why Different' },
+  { href: '/#platform', label: 'Platform' },
+  { href: '/#cta', label: 'Investor Story' },
 ]
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 16)
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [pathname])
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-black/80 backdrop-blur-[20px] border-b border-border-subtle'
+            ? 'border-b border-[#EED7C7] bg-[rgba(255,248,240,0.88)] shadow-[0_12px_30px_rgba(62,39,35,0.06)] backdrop-blur-xl'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="text-2xl">🪔</span>
-            <span className="font-[family-name:var(--font-cormorant)] text-xl text-saffron-200 font-medium">
-              DevBhumi
-            </span>
+        <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-6">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-[#F5D9C2] bg-white/88 shadow-[0_10px_24px_rgba(232,117,42,0.08)]">
+              <Image
+                src="/icon.png"
+                alt="DevBhumi icon"
+                width={44}
+                height={44}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <div className="text-lg font-semibold tracking-[-0.04em] text-[#3E2723]">DevBhumi</div>
+              <div className="text-xs text-[#A07D6C]">Seek Guidance. Find Peace.</div>
+            </div>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden items-center gap-8 lg:flex">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors duration-200 ${
-                  pathname === link.href
-                    ? 'text-saffron-400'
-                    : 'text-ink-400 hover:text-saffron-400'
-                }`}
+                className="text-sm font-medium text-[#6D5347] transition-colors duration-200 hover:text-[#D4621A]"
               >
                 {link.label}
-                {pathname === link.href && (
-                  <span className="block w-1 h-1 rounded-full bg-saffron-400 mx-auto mt-1" />
-                )}
               </Link>
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link
               href="/investor"
-              className="flex items-center gap-2 bg-gradient-to-r from-saffron-500 to-saffron-600 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-saffron-500/20 transition-all duration-300"
+              className="inline-flex items-center gap-2 rounded-full border border-[#E9D6C7] bg-white/88 px-5 py-3 text-sm font-semibold text-[#3E2723] shadow-[0_12px_26px_rgba(62,39,35,0.06)] transition-transform duration-200 hover:-translate-y-0.5"
             >
-              <Presentation className="w-4 h-4" />
-              Investor Pitch Deck
+              <Presentation className="h-4 w-4 text-[#E8752A]" />
+              Investor View
             </Link>
           </div>
 
           <button
-            className="md:hidden text-ink-300 p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            type="button"
+            aria-label="Toggle navigation"
+            onClick={() => setMobileOpen((open) => !open)}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E9D6C7] bg-white/88 text-[#3E2723] shadow-[0_10px_24px_rgba(62,39,35,0.06)] lg:hidden"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 right-0 w-[280px] bg-bg-surface border-l border-border-subtle z-50 p-8 pt-20 flex flex-col gap-6"
-          >
-            <button
-              className="absolute top-5 right-5 text-ink-400"
-              onClick={() => setMobileOpen(false)}
-            >
-              <X className="w-5 h-5" />
-            </button>
-            {links.map((link) => (
+      {mobileOpen ? (
+        <>
+          <div className="fixed inset-0 z-40 bg-[#3E2723]/20 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
+          <div className="fixed inset-x-4 top-[5.5rem] z-50 rounded-[2rem] border border-[#EED7C7] bg-[rgba(255,248,240,0.96)] p-6 shadow-[0_24px_70px_rgba(62,39,35,0.12)] backdrop-blur-xl lg:hidden">
+            <div className="grid gap-3">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-2xl border border-[#F2DFD1] bg-white/90 px-4 py-4 text-sm font-medium text-[#5C4337]"
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
-                key={link.href}
-                href={link.href}
-                className={`text-lg transition-colors duration-200 ${
-                  pathname === link.href ? 'text-saffron-400' : 'text-ink-300 hover:text-saffron-400'
-                }`}
+                href="/investor"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#E8752A] to-[#FF8C00] px-4 py-4 text-sm font-semibold text-white"
               >
-                {link.label}
+                <Presentation className="h-4 w-4" />
+                Investor View
               </Link>
-            ))}
-            <Link
-              href="/investor"
-              className="mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-saffron-500 to-saffron-600 text-white text-sm font-medium px-5 py-3 rounded-full"
-            >
-              <Presentation className="w-4 h-4" />
-              Investor Pitch Deck
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 z-40 md:hidden"
-            onClick={() => setMobileOpen(false)}
-          />
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </>
+      ) : null}
     </>
   )
 }

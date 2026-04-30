@@ -1,46 +1,52 @@
 import type { Metadata } from 'next'
-import { Inter_Tight, Cormorant_Garamond } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import './globals.css'
 
-const interTight = Inter_Tight({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+const interTight = localFont({
+  src: [
+    { path: './fonts/InterTight-Light.ttf', weight: '300', style: 'normal' },
+    { path: './fonts/InterTight-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/InterTight-Medium.ttf', weight: '500', style: 'normal' },
+    { path: './fonts/InterTight-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: './fonts/InterTight-Bold.ttf', weight: '700', style: 'normal' },
+  ],
   variable: '--font-inter-tight',
   display: 'swap',
 })
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
-  display: 'swap',
-})
-
 export const metadata: Metadata = {
-  title: 'DevBhumi — Talk to Your God',
+  title: 'DevBhumi | Hindu Spiritual Companion Platform',
   description:
-    'AI-powered Hindu spiritual companion. Conversational deity AI grounded in 1,000+ Vedic texts. 8 Indian languages. Daily ritual guidance, yoga, mantras, and more.',
+    'DevBhumi unifies deity-led AI guidance, kundli, horoscope, bhajans, meditation, devotional shorts, and an admin-operated spiritual content platform.',
   keywords: [
-    'Hindu AI app',
-    'Vedic wisdom',
-    'spiritual companion',
-    'Bhagavad Gita AI',
-    'Hindu calendar',
-    'mantra app',
+    'Hindu spiritual app',
+    'AI spiritual companion',
+    'kundli app',
+    'bhajan app',
+    'devotional AI',
+    'Vedic guidance',
   ],
   openGraph: {
-    title: 'DevBhumi — Talk to Your God',
+    title: 'DevBhumi | Hindu Spiritual Companion Platform',
     description:
-      'AI-powered Hindu spiritual companion bringing 5,000 years of wisdom to 1.1 billion devotees.',
+      'A product story built from the real Flutter app: divine guidance, Vedic insight, devotional media, and operational backend control.',
     type: 'website',
     locale: 'en_IN',
     siteName: 'DevBhumi',
   },
+  icons: {
+    icon: [
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: ['/icon.png'],
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png' },
+    ],
+  },
   other: {
-    'theme-color': '#0A0806',
+    'theme-color': '#FFF8F0',
   },
 }
 
@@ -50,8 +56,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${interTight.variable} ${cormorant.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col grain">
+    <html lang="en" className={`${interTight.variable} h-full antialiased`}>
+      <body className="min-h-full bg-[#FFF8F0] text-[#3E2723]">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

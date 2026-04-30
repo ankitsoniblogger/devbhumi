@@ -1,19 +1,19 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 const productLinks = [
-  { href: '/features', label: 'Features' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/roadmap', label: 'Roadmap' },
-  { href: '#', label: 'Download' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#difference', label: 'Why Different' },
+  { href: '/#platform', label: 'Platform' },
+  { href: '/#cta', label: 'Investor Story' },
 ]
 
 const companyLinks = [
   { href: '/about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
   { href: '/press', label: 'Press' },
-  { href: '/careers', label: 'Careers' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -26,88 +26,68 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border-subtle">
-      <div className="section-divider" />
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <span className="text-2xl">🪔</span>
-              <span className="font-[family-name:var(--font-cormorant)] text-xl text-saffron-200 font-medium">
-                DevBhumi
-              </span>
-            </Link>
-            <p className="text-sm text-ink-500 mb-6 leading-relaxed">
-              AI-powered spiritual companion bringing 5,000 years of Hindu wisdom to your pocket.
+    <footer className="border-t border-[#ECD8C8] bg-[linear-gradient(180deg,rgba(255,248,240,0.84),rgba(255,244,232,0.98))]">
+      <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr_0.85fr_0.85fr]">
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-[#F4D8C1] bg-white shadow-[0_12px_28px_rgba(232,117,42,0.08)]">
+                <Image
+                  src="/icon.png"
+                  alt="DevBhumi icon"
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <div className="text-lg font-semibold tracking-[-0.04em] text-[#3E2723]">DevBhumi</div>
+                <div className="text-sm text-[#8D6E63]">Seek Guidance. Find Peace.</div>
+              </div>
+            </div>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-[#73594D]">
+              Hindu spiritual technology built across AI conversation, devotional media, Vedic insight,
+              and an admin-operated content platform.
             </p>
-            <div className="flex gap-4">
-              {['Twitter', 'Instagram', 'YouTube', 'LinkedIn'].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="text-xs text-ink-600 hover:text-saffron-400 transition-colors duration-200"
-                >
-                  {s}
-                </a>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#A46C49]">Product</h3>
+            <div className="mt-4 grid gap-3">
+              {productLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-sm text-[#6A5145] transition-colors hover:text-[#D4621A]">
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>
 
-          {/* Product */}
           <div>
-            <h4 className="text-[11px] tracking-[0.12em] uppercase text-ink-500 font-medium mb-4">
-              Product
-            </h4>
-            <ul className="space-y-3">
-              {productLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-sm text-ink-400 hover:text-saffron-400 transition-colors duration-200">
-                    {l.label}
-                  </Link>
-                </li>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#A46C49]">Company</h3>
+            <div className="mt-4 grid gap-3">
+              {companyLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-sm text-[#6A5145] transition-colors hover:text-[#D4621A]">
+                  {link.label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className="text-[11px] tracking-[0.12em] uppercase text-ink-500 font-medium mb-4">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {companyLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-sm text-ink-400 hover:text-saffron-400 transition-colors duration-200">
-                    {l.label}
-                  </Link>
-                </li>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#A46C49]">Legal</h3>
+            <div className="mt-4 grid gap-3">
+              {legalLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-sm text-[#6A5145] transition-colors hover:text-[#D4621A]">
+                  {link.label}
+                </Link>
               ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="text-[11px] tracking-[0.12em] uppercase text-ink-500 font-medium mb-4">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              {legalLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-sm text-ink-400 hover:text-saffron-400 transition-colors duration-200">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink-600">
-          <p>&copy; 2025 DevBhumi. All rights reserved.</p>
-          <p>hello@ankitsoni.in</p>
-          <p>Made in Bengaluru 🇮🇳</p>
+        <div className="mt-12 flex flex-col gap-3 border-t border-[#ECD8C8] pt-6 text-sm text-[#8D6E63] md:flex-row md:items-center md:justify-between">
+          <p>© 2026 DevBhumi. Built in India for a global spiritual audience.</p>
+          <p>Product story rebuilt from the Flutter app and admin platform.</p>
         </div>
       </div>
     </footer>
