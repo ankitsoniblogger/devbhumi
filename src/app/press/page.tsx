@@ -1,92 +1,109 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { pageVariants, sectionReveal, staggerContainer, staggerItem, viewportConfig } from '@/lib/animations'
-import { SectionLabel } from '@/components/ui/SectionLabel'
-import { GlowCard } from '@/components/ui/GlowCard'
+import { Download, FileText, Newspaper } from 'lucide-react'
 
 const coverage = [
-  { outlet: 'The Hindu', date: 'April 2026', headline: '"DevBhumi is making the Vedas accessible to a generation that grew up on smartphones"', tag: 'Feature' },
-  { outlet: 'YourStory', date: 'March 2026', headline: 'Bengaluru startup raises seed round to build AI companion for 1.1 billion Hindus', tag: 'Funding' },
-  { outlet: 'Economic Times', date: 'March 2026', headline: 'Spiritual tech is the next frontier for India\'s AI boom, and DevBhumi is leading the charge', tag: 'Analysis' },
-  { outlet: 'Inc42', date: 'February 2026', headline: 'How DevBhumi\'s RAG pipeline ensures scripture accuracy in AI responses', tag: 'Deep Dive' },
-  { outlet: 'Mint', date: 'January 2026', headline: 'Devotional apps get an AI upgrade — can they replace a trip to the pandit?', tag: 'Feature' },
-  { outlet: 'NDTV Tech', date: 'December 2025', headline: 'DevBhumi\'s Diwali beta draws 10,000 users in 72 hours', tag: 'Launch' },
+  { outlet: 'The Hindu', date: 'April 2026', headline: 'DevBhumi is making spiritual guidance feel native to the smartphone era.', tag: 'Feature' },
+  { outlet: 'YourStory', date: 'March 2026', headline: 'Why Hindu spiritual technology may become a serious new consumer category.', tag: 'Startup Story' },
+  { outlet: 'Economic Times', date: 'March 2026', headline: 'AI, culture, and ritual behavior are converging in India’s next product wave.', tag: 'Analysis' },
+  { outlet: 'Inc42', date: 'February 2026', headline: 'The infrastructure behind a devotional AI product needs more than prompts.', tag: 'Deep Dive' },
 ]
 
 const assets = [
-  { label: 'Brand Kit (Logos + Colors)', size: '4.2 MB', format: 'ZIP' },
-  { label: 'Product Screenshots', size: '18 MB', format: 'ZIP' },
-  { label: 'Founder Headshots', size: '6.1 MB', format: 'ZIP' },
-  { label: 'Company Fact Sheet', size: '240 KB', format: 'PDF' },
+  { title: 'Brand assets', detail: 'Logo, icon, type, and color references' },
+  { title: 'Product screenshots', detail: 'Mobile UI images for editorial and media usage' },
+  { title: 'Company summary', detail: 'Short description, positioning, and narrative overview' },
+  { title: 'Founder contact', detail: 'Direct route for interviews and investor-aligned press requests' },
 ]
+
+function Heading({
+  label,
+  title,
+  body,
+}: {
+  label: string
+  title: string
+  body: string
+}) {
+  return (
+    <div className="max-w-3xl">
+      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-[#C0713A]">{label}</div>
+      <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.045em] text-[#3E2723] sm:text-5xl lg:text-6xl">
+        {title}
+      </h1>
+      <p className="mt-5 text-base leading-8 text-[#72584D] sm:text-lg">{body}</p>
+    </div>
+  )
+}
 
 export default function PressPage() {
   return (
-    <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit" className="pt-16">
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="max-w-2xl mb-16">
-            <SectionLabel number="01" label="Press" />
-            <h1
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight mb-4"
-              style={{ fontSize: 'clamp(40px, 6vw, 72px)' }}
-            >
-              News & media coverage
-            </h1>
-            <p className="text-ink-400 leading-relaxed">
-              For press inquiries, interviews, or media assets contact{' '}
-              <a href="mailto:press@devbhumi.com" className="text-saffron-400 hover:underline">press@devbhumi.com</a>
-            </p>
-          </motion.div>
+    <div className="overflow-x-hidden bg-[linear-gradient(180deg,#FFF8F0_0%,#FFF5EC_38%,#FFF8F0_100%)] pt-20 text-[#3E2723]">
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <div className="rounded-[2.3rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] sm:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <Heading
+              label="Press"
+              title="A cleaner media page for coverage, narrative, and downloadable assets."
+              body="This page is designed to help journalists, analysts, and ecosystem partners understand the company quickly without hunting through the full site."
+            />
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportConfig}
-            className="space-y-4 mb-20"
-          >
-            {coverage.map((item) => (
-              <motion.div key={item.headline} variants={staggerItem}>
-                <div className="bg-bg-elevated border border-border-subtle rounded-xl px-6 py-5 flex flex-col sm:flex-row sm:items-center gap-4 hover:border-border-hover transition-colors cursor-pointer group">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-medium text-saffron-400">{item.outlet}</span>
-                      <span className="text-xs text-ink-600">{item.date}</span>
-                      <span className="text-xs text-ink-600 bg-bg-base px-2 py-0.5 rounded-full border border-border-subtle">{item.tag}</span>
-                    </div>
-                    <p className="text-ink-200 leading-snug group-hover:text-ink-50 transition-colors duration-200">{item.headline}</p>
-                  </div>
-                  <span className="text-saffron-400 text-sm shrink-0 group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <div className="section-divider mb-20" />
-
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig}>
-            <SectionLabel number="02" label="Media Assets" />
-            <h2
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight mb-10"
-              style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}
-            >
-              Download press kit
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {assets.map((a) => (
-                <GlowCard key={a.label} className="p-5 cursor-pointer group">
-                  <div className="text-2xl mb-3">📦</div>
-                  <h3 className="text-ink-100 font-medium text-sm mb-1">{a.label}</h3>
-                  <p className="text-xs text-ink-600">{a.size} &middot; {a.format}</p>
-                  <span className="mt-3 text-xs text-saffron-400 group-hover:translate-x-1 transition-transform duration-200 inline-block">Download &rarr;</span>
-                </GlowCard>
-              ))}
+            <div className="rounded-[1.9rem] border border-[#F3D8C6] bg-[linear-gradient(135deg,#FFF6EC,#FFF1E4)] p-6 shadow-[0_18px_45px_rgba(232,117,42,0.08)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#E8752A] shadow-[0_8px_18px_rgba(232,117,42,0.08)]">
+                <Newspaper className="h-5 w-5" />
+              </div>
+              <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">Press contact</h2>
+              <p className="mt-3 text-sm leading-7 text-[#72584D]">
+                For interviews, company context, or product background:
+                <br />
+                <a href="mailto:press@ankitsoni.in" className="font-semibold text-[#C0713A]">press@ankitsoni.in</a>
+              </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-    </motion.div>
+
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <Heading
+          label="Coverage"
+          title="A shortlist of stories the company would want in a modern press room."
+          body="These entries are positioned like credible coverage snapshots and can later connect to real links, PDFs, or newsroom announcements."
+        />
+
+        <div className="mt-10 grid gap-4">
+          {coverage.map((item) => (
+            <div key={item.headline} className="rounded-[1.75rem] border border-[#F0D7C6] bg-white/86 p-6 shadow-[0_18px_50px_rgba(62,39,35,0.05)]">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-[#FFF4E7] px-3 py-1 text-xs font-semibold text-[#C0713A]">{item.outlet}</span>
+                <span className="text-xs text-[#8A6C5E]">{item.date}</span>
+                <span className="text-xs text-[#8A6C5E]">{item.tag}</span>
+              </div>
+              <h2 className="mt-4 text-2xl font-semibold leading-snug tracking-[-0.03em] text-[#3E2723]">{item.headline}</h2>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 pt-14 sm:pb-24 sm:pt-20">
+        <Heading
+          label="Media Kit"
+          title="Everything a reporter or partner should be able to grab quickly."
+          body="This gives the press page a more complete, professional feel even before downloads are fully wired up."
+        />
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-4">
+          {assets.map((asset, index) => {
+            const Icon = index % 2 === 0 ? Download : FileText
+            return (
+              <div key={asset.title} className="rounded-[1.8rem] border border-[#F0D7C6] bg-white/86 p-6 shadow-[0_20px_60px_rgba(62,39,35,0.05)]">
+                <div className="inline-flex rounded-2xl bg-[#FFF4E7] p-3 text-[#E8752A]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">{asset.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#72584D]">{asset.detail}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+    </div>
   )
 }

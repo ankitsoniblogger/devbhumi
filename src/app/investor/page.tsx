@@ -1,242 +1,303 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
-  BarChart3,
   BookOpen,
   Brain,
-  Check,
-  DollarSign,
   Flame,
   Globe,
+  HeartHandshake,
+  Layers3,
   MonitorCog,
   Shield,
-  Smartphone,
   Sparkles,
   Users,
-} from 'lucide-react'
+} from "lucide-react";
 
-const marketStats = [
-  { label: 'Faith economy in India', value: '$64B', note: 'Large, emotional, and underserved by great software.', icon: DollarSign },
-  { label: 'Hindus worldwide', value: '1.1B', note: 'A massive primary audience with strong cultural continuity.', icon: Users },
-  { label: 'India smartphone users', value: '750M+', note: 'A mobile-first market with broad devotional content demand.', icon: Smartphone },
-  { label: 'Strategic category thesis', value: '4 in 1', note: 'Prayer, astrology, devotion, and scripture converge here.', icon: Sparkles },
-]
-
-const problemPoints = [
-  'Spiritual guidance is still fragmented across prayer apps, astrology platforms, temple utilities, and scripture tools.',
-  'Most Hindu spiritual products are transactional or content-led, not relationship-led.',
-  'Urban users and the global diaspora want context, habit, and identity, not just one-time answers.',
-]
-
-const solutionPillars = [
+const pitchSections = [
   {
-    title: 'Deity-led AI guidance',
-    body: 'Conversation starts with a chosen divine guide, making the product feel more personal and emotionally resonant than a generic chatbot.',
+    label: "01. Company Purpose",
+    title:
+      "DevBhumi is building a Hindu spiritual companion platform for everyday life, not a single-use devotional utility.",
+    body: "The strongest company story is not “AI for religion.” It is a mobile product that connects guidance, ritual, predictive insight, content, and repeat-use behavior into one coherent experience.",
+  },
+  {
+    label: "02. Problem",
+    title:
+      "Spiritual demand is deep, but the digital product landscape is still fragmented.",
+    body: "Users move between prayer tools, astrology flows, bhajan apps, scripture products, and ritual utilities. Most products serve one narrow job well, but very few become the daily spiritual operating layer.",
+  },
+  {
+    label: "03. Why Now",
+    title:
+      "The timing works because mobile behavior, cultural identity, and AI interfaces are finally converging.",
+    body: "A modern Hindu user already consumes content, seeks guidance, watches short-form media, and builds routines through mobile surfaces. Conversational AI makes those behaviors easier to unify into one premium product system.",
+  },
+];
+
+const productProof = [
+  {
+    title: "Guidance",
+    body: "The Flutter app already supports deity-led entry points, guided prompts, saved answers, and repeatable conversation loops.",
     icon: Brain,
+    image: "/showcase/deity-selection.jpeg",
   },
   {
-    title: 'Full ritual and insight stack',
-    body: 'Kundli, horoscope, bhajans, meditation, daily quotes, reminders, and sacred media help the app stay useful beyond a single question.',
+    title: "Practice",
+    body: "Bhajans, daily quote flows, meditation, reminders, and calendar-driven behavior make the product more than a one-time query tool.",
     icon: Flame,
+    image: "/showcase/bhajan.jpeg",
   },
   {
-    title: 'Admin-controlled content engine',
-    body: 'Deities, shorts, bhajans, content, Vedic knowledge, push, app settings, and user oversight are already visible in the admin platform.',
+    title: "System",
+    body: "The admin panel already manages content, deities, shorts, users, push, settings, and monitoring, which makes the platform story credible.",
     icon: MonitorCog,
+    image: "/showcase/profile.jpeg",
   },
-]
+];
 
-const moatPoints = [
-  'The product bridges multiple categories instead of competing inside only one of them.',
-  'The mobile app already shows repeat-use behavior, not just static content consumption.',
-  'The backend gives the team operational control over what ships, changes, and gets promoted.',
-  'The visual identity feels culturally specific rather than a white-labeled wellness app.',
-]
-
-const comparisonRows = [
+const marketLens = [
   {
-    category: 'Prayer habit apps',
-    current: 'Strong at calm, prayer routines, journaling, and streaks.',
-    missing: 'Usually narrow in faith format and weaker on Hindu-specific guidance and predictive insight.',
-    devbhumi: 'Combines ritual habit with deity conversation, media, and spiritual problem-solving.',
+    title: "Prayer and wellness apps",
+    current: "Strong at habit, calm, and guided reflection.",
+    gap: "Usually weaker on Hindu identity, ritual context, and predictive spiritual insight.",
   },
   {
-    category: 'Astrology platforms',
-    current: 'Strong at prediction, chat, call, kundli, and consultation flow.',
-    missing: 'Often transactional and less sticky as a daily spiritual companion.',
-    devbhumi: 'Turns prediction into part of a broader companion product with devotion and habit layers.',
+    title: "Astrology platforms",
+    current:
+      "Strong at consultation, kundli, horoscope, and monetizable intent.",
+    gap: "Often transactional rather than relationship-led or habit-led.",
   },
   {
-    category: 'Devotional ritual apps',
-    current: 'Strong at pooja, temples, bhajans, panchang, and religious access.',
-    missing: 'Usually less personalized around AI-led conversation and everyday spiritual coaching.',
-    devbhumi: 'Adds an interactive assistant layer without losing ritual or devotional context.',
+    title: "Devotional products",
+    current:
+      "Strong at ritual, temple access, bhajans, and calendar utilities.",
+    gap: "Usually less personalized around interactive guidance and emotional problem-solving.",
+  },
+];
+
+const moatBlocks = [
+  {
+    title: "Category bridge",
+    text: "DevBhumi sits at the intersection of prayer, astrology, devotion, and scripture instead of living inside only one bucket.",
+    icon: Layers3,
   },
   {
-    category: 'Scripture products',
-    current: 'Strong at reading, verse reflection, and focused study.',
-    missing: 'Usually narrow in scope and weaker on media, prediction, and habit loops.',
-    devbhumi: 'Can expand from insight into behavior, media, conversation, and subscription depth.',
+    title: "Product breadth",
+    text: "The app already combines multiple surfaces that can reinforce each other rather than fighting for user attention separately.",
+    icon: Sparkles,
   },
-]
+  {
+    title: "Operational control",
+    text: "Backend-managed content, deity setup, notifications, and monitoring make iteration speed part of the product advantage.",
+    icon: Shield,
+  },
+  {
+    title: "Identity resonance",
+    text: "The tone, imagery, and structure feel culturally native rather than adapted from generic wellness software.",
+    icon: HeartHandshake,
+  },
+];
 
-const revenueStreams = [
-  'Subscription tiers for premium guidance, deeper insight, and richer devotional experiences',
-  'Premium predictive modules and advanced interpretation surfaces',
-  'Temple, spiritual brand, and content partnerships',
-  'Devotional commerce and ritual-service expansion over time',
-]
+const businessModel = [
+  "Premium subscription tiers for richer guidance, insight, and devotional experiences",
+  "Paid predictive and interpretation layers built around high-intent usage",
+  "Temple, spiritual brand, and content partnerships",
+  "Devotional commerce and ritual-service expansion over time",
+];
 
-const roadmap = [
-  { stage: 'Now', detail: 'Polish the consumer product story and strengthen repeat-use product loops.' },
-  { stage: 'Next', detail: 'Improve retention, premium packaging, and investor-ready positioning.' },
-  { stage: 'Scale', detail: 'Grow the content engine, launch monetization layers, and deepen distribution partnerships.' },
-  { stage: 'Platform', detail: 'Turn the admin-controlled stack into a long-term spiritual operating system.' },
-]
+const gtmBlocks = [
+  "Mobile-first consumer growth driven by culturally resonant product storytelling",
+  "Retention loops through reminders, saved answers, shorts, and daily ritual surfaces",
+  "Distribution opportunities through spiritual creators, temple ecosystems, and community channels",
+  "Premium monetization introduced after habit and trust are strong enough",
+];
 
-const fundUse = [
-  { area: 'Product and engineering', pct: '40%' },
-  { area: 'AI and content systems', pct: '25%' },
-  { area: 'Growth and partnerships', pct: '20%' },
-  { area: 'Operations and brand', pct: '15%' },
-]
+const askBlocks = [
+  "Refine the product into a stronger premium consumer experience",
+  "Deepen the content and AI operating layer behind the product",
+  "Improve retention, packaging, and monetization readiness",
+  "Scale growth with a sharper category narrative and partnership motion",
+];
 
-function InvestorHeading({
+function DeckHeading({
   label,
   title,
   body,
   center = false,
 }: {
-  label: string
-  title: string
-  body: string
-  center?: boolean
+  label: string;
+  title: string;
+  body: string;
+  center?: boolean;
 }) {
   return (
-    <div className={center ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
-      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-[#C0713A]">{label}</div>
+    <div className={center ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-[#C0713A]">
+        {label}
+      </div>
       <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.045em] text-[#3E2723] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
-      <p className="mt-5 text-base leading-8 text-[#72584D] sm:text-lg">{body}</p>
+      <p className="mt-5 text-base leading-8 text-[#72584D] sm:text-lg">
+        {body}
+      </p>
     </div>
-  )
+  );
 }
 
 export default function InvestorPage() {
   return (
-    <div className="overflow-x-hidden pt-20 text-[#3E2723]">
+    <div className="overflow-x-hidden bg-[linear-gradient(180deg,#FFF8F0_0%,#FFF5EC_36%,#FFF8F0_100%)] pt-20 text-[#3E2723]">
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_top,rgba(232,117,42,0.18),transparent_62%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[36rem] bg-[radial-gradient(circle_at_top,rgba(232,117,42,0.14),transparent_64%)]" />
         <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:py-20">
-          <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#F2D5BE] bg-white/85 px-4 py-2 text-sm font-medium text-[#A4511A] shadow-[0_10px_30px_rgba(232,117,42,0.08)]">
-                <span className="h-2 w-2 rounded-full bg-[#E8752A]" />
-                Investor Page
-              </div>
+          <div className="rounded-[2.5rem] border border-[#F0D7C6] bg-[linear-gradient(135deg,rgba(255,255,255,0.82),rgba(255,247,238,0.94))] p-7 shadow-[0_28px_90px_rgba(62,39,35,0.08)] backdrop-blur sm:p-9 lg:p-10">
+            <div className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#F2D5BE] bg-white/90 px-4 py-2 text-sm font-medium text-[#A4511A] shadow-[0_10px_30px_rgba(232,117,42,0.08)]">
+                  <span className="h-2 w-2 rounded-full bg-[#E8752A]" />
+                  Seed Narrative
+                </div>
 
-              <h1 className="mt-7 text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-[#3E2723] sm:text-6xl lg:text-7xl">
-                DevBhumi is building a
-                <span className="bg-gradient-to-r from-[#E8752A] to-[#FF8C00] bg-clip-text text-transparent"> Hindu spiritual platform</span>,
-                not a single-feature app.
-              </h1>
+                <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-[#3E2723] sm:text-6xl lg:text-[4.9rem]">
+                  DevBhumi is building the
+                  <span className="bg-gradient-to-r from-[#E8752A] to-[#FF8C00] bg-clip-text text-transparent">
+                    {" "}
+                    Hindu spiritual operating layer
+                  </span>{" "}
+                  for a mobile-first generation.
+                </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6E554B] sm:text-xl">
-                The strongest investor story here is not “AI for religion.” It is a category-bridging
-                mobile product that connects guidance, ritual, insight, media, and backend-operated
-                spiritual content into one system.
-              </p>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6E554B] sm:text-xl">
+                  This is not a single-purpose devotional app. It is a
+                  category-bridging platform that unifies guidance, ritual,
+                  predictive insight, devotional content, and backend-controlled
+                  spiritual programming into one coherent consumer product.
+                </p>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {[
-                  ['Thesis', 'Category bridge', 'Prayer, astrology, devotion, and scripture in one product arc.'],
-                  ['Product', 'Mobile-first', 'Real Flutter flows already cover conversation, content, and retention surfaces.'],
-                  ['Platform', 'Admin-backed', 'Operational control already exists across content, users, push, and monitoring.'],
-                ].map(([eyebrow, title, text]) => (
-                  <div key={title} className="rounded-[1.75rem] border border-white/75 bg-white/82 p-5 shadow-[0_18px_45px_rgba(62,39,35,0.06)]">
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B56E3B]">{eyebrow}</div>
-                    <div className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">{title}</div>
-                    <p className="mt-3 text-sm leading-6 text-[#7A6055]">{text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#E8752A] to-[#FF8C00] px-6 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(232,117,42,0.24)]"
-                >
-                  Schedule a Conversation
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <a
-                  href="mailto:hello@ankitsoni.in?subject=DevBhumi%20Investor%20Inquiry"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#E8D6C8] bg-white/88 px-6 py-4 text-base font-semibold text-[#3E2723]"
-                >
-                  Email the Team
-                  <BarChart3 className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-[40rem]">
-              <div className="grid gap-5 sm:grid-cols-[0.82fr_1fr]">
-                <div className="space-y-5 sm:pt-14">
-                  <div className="rounded-[2rem] border border-white/80 bg-white/88 p-3 shadow-[0_24px_80px_rgba(62,39,35,0.12)]">
-                    <Image
-                      src="/showcase/home-light.jpeg"
-                      alt="DevBhumi home screen"
-                      width={460}
-                      height={920}
-                      className="h-auto w-full rounded-[1.4rem] border border-[#F3E1D4]"
-                    />
-                  </div>
-                  <div className="rounded-[2rem] border border-[#F6D5BE] bg-[#FFF3E6] p-5 shadow-[0_18px_50px_rgba(232,117,42,0.12)]">
-                    <div className="flex gap-4">
-                      <div className="rounded-2xl bg-white/85 p-3 text-[#E8752A]">
-                        <MonitorCog className="h-5 w-5" />
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  {[
+                    ["Category", "Spiritual companion platform"],
+                    ["Shape", "Consumer app + admin system"],
+                    ["Positioning", "Prayer, astrology, devotion, scripture"],
+                  ].map(([label, value]) => (
+                    <div
+                      key={label}
+                      className="rounded-lg border border-[#F2DFD1] bg-white/82 px-4 py-4 shadow-[0_12px_28px_rgba(62,39,35,0.04)]"
+                    >
+                      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B56E3B]">
+                        {label}
                       </div>
-                      <div>
-                        <div className="text-lg font-semibold tracking-[-0.03em]">Visible operational maturity</div>
-                        <p className="mt-1 text-sm leading-6 text-[#745A4D]">
-                          This is not just a landing page story. The app and the admin platform already show
-                          consumer breadth and backend control.
-                        </p>
+                      <div className="mt-2 text-base font-semibold leading-6 text-[#3E2723]">
+                        {value}
                       </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#E8752A] to-[#FF8C00] px-6 py-4 text-base font-semibold text-white shadow-[0_18px_40px_rgba(232,117,42,0.24)]"
+                  >
+                    Schedule a Conversation
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <a
+                    href="mailto:hello@ankitsoni.in?subject=DevBhumi%20Investor%20Inquiry"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#E8D6C8] bg-white/88 px-6 py-4 text-base font-semibold text-[#3E2723]"
+                  >
+                    Email the Team
+                    <Users className="h-4 w-4" />
+                  </a>
+                </div>
+
+                <div className="mt-6 max-w-xl rounded-[1.8rem] border border-[#F3D8C6] bg-[#FFF4E7] p-5 shadow-[0_16px_40px_rgba(232,117,42,0.08)]">
+                  <div className="flex gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#E8752A] shadow-[0_10px_20px_rgba(232,117,42,0.08)]">
+                      <MonitorCog className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-semibold tracking-[-0.03em] text-[#3E2723]">
+                        Consumer app + admin system
+                      </div>
+                      <p className="mt-1 text-sm leading-6 text-[#745A4D]">
+                        The investor story is stronger because product breadth
+                        and operational backend depth already exist together.
+                      </p>
                     </div>
                   </div>
                 </div>
+              </div>
 
+              <div className="relative mx-auto w-full max-w-[42rem]">
+                <div className="absolute right-10 top-10 -z-10 h-52 w-52 rounded-full bg-[radial-gradient(circle,rgba(255,183,77,0.26),rgba(232,117,42,0.02),transparent_72%)] blur-2xl" />
                 <div className="grid gap-5">
-                  <div className="rounded-[2rem] border border-white/80 bg-white/88 p-3 shadow-[0_24px_80px_rgba(62,39,35,0.12)]">
-                    <Image
-                      src="/showcase/deity-selection.jpeg"
-                      alt="DevBhumi deity selection screen"
-                      width={460}
-                      height={920}
-                      className="h-auto w-full rounded-[1.4rem] border border-[#F3E1D4]"
-                    />
+                  <div className="rounded-[2rem] border border-[#F0D7C6] bg-white/88 p-6 shadow-[0_24px_70px_rgba(62,39,35,0.08)]">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B56E3B]">
+                          Investment Frame
+                        </div>
+                        <h2 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">
+                          One product can unify four fragmented spiritual
+                          behaviors.
+                        </h2>
+                      </div>
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#FFF4E7] text-[#E8752A] shadow-[0_10px_20px_rgba(232,117,42,0.08)]">
+                        <Layers3 className="h-5 w-5" />
+                      </div>
+                    </div>
+
+                    <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                      {[
+                        ["Prayer", "Habit, calm, and reflection"],
+                        ["Astrology", "Prediction, consultation, and timing"],
+                        ["Devotion", "Bhajans, pooja, and identity"],
+                        ["Scripture", "Daily wisdom and study"],
+                      ].map(([title, text]) => (
+                        <div
+                          key={title}
+                          className="rounded-[1.35rem] border border-[#F3E1D4] bg-[#FFF9F4] px-4 py-4"
+                        >
+                          <div className="text-sm font-semibold text-[#3E2723]">
+                            {title}
+                          </div>
+                          <p className="mt-1 text-sm leading-6 text-[#7B6156]">
+                            {text}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-5 rounded-[1.4rem] border border-[#F1DDCF] bg-[#FFF5EB] px-4 py-4 text-sm leading-7 text-[#6F554A]">
+                      DevBhumi becomes investable when positioned as the
+                      Hindu-native operating layer that connects these jobs into
+                      one high-retention product.
+                    </div>
                   </div>
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div className="rounded-[2rem] border border-white/80 bg-white/90 p-3 shadow-[0_18px_60px_rgba(62,39,35,0.1)]">
+
+                  <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+                    <div className="rounded-[2rem] border border-white/80 bg-white/90 p-3 shadow-[0_20px_55px_rgba(62,39,35,0.08)]">
                       <Image
-                        src="/showcase/bhajan.jpeg"
-                        alt="Bhajan screen"
-                        width={320}
-                        height={700}
-                        className="h-auto w-full rounded-[1.3rem] border border-[#F3E1D4]"
+                        src="/showcase/home-light.jpeg"
+                        alt="DevBhumi home screen"
+                        width={520}
+                        height={980}
+                        className="h-auto w-full rounded-[1.4rem] border border-[#F3E1D4]"
                       />
                     </div>
-                    <div className="rounded-[2rem] border border-white/80 bg-white/90 p-3 shadow-[0_18px_60px_rgba(62,39,35,0.1)] sm:translate-y-10">
-                      <Image
-                        src="/showcase/profile.jpeg"
-                        alt="Profile screen"
-                        width={320}
-                        height={700}
-                        className="h-auto w-full rounded-[1.3rem] border border-[#F3E1D4]"
-                      />
+                    <div className="grid gap-5">
+                      <div className="rounded-[1.8rem] border border-white/80 bg-white/90 p-3 shadow-[0_18px_50px_rgba(62,39,35,0.08)]">
+                        <Image
+                          src="/showcase/deity-selection.jpeg"
+                          alt="Deity selection screen"
+                          width={360}
+                          height={760}
+                          className="h-auto w-full rounded-[1.25rem] border border-[#F3E1D4]"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -247,74 +308,67 @@ export default function InvestorPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <InvestorHeading
-          label="Market Opportunity"
-          title="A large audience exists. The software category is still early."
-          body="This is attractive because the emotional demand is deep, the mobile usage is already there, and the product landscape is still fragmented enough for a strong category-defining player to emerge."
-          center
-        />
-
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {marketStats.map((stat) => {
-            const Icon = stat.icon
-
-            return (
-              <div key={stat.label} className="rounded-[1.8rem] border border-[#F0D7C6] bg-white/84 p-6 shadow-[0_20px_65px_rgba(62,39,35,0.06)]">
-                <div className="inline-flex rounded-2xl bg-[#FFF4E7] p-3 text-[#E8752A]">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-[#3E2723]">{stat.value}</div>
-                <div className="mt-2 text-base font-semibold text-[#3E2723]">{stat.label}</div>
-                <p className="mt-3 text-sm leading-7 text-[#72584D]">{stat.note}</p>
+        <div className="grid gap-5 lg:grid-cols-3">
+          {pitchSections.map((section) => (
+            <div
+              key={section.label}
+              className="rounded-[1.9rem] border border-[#F0D7C6] bg-white/86 p-7 shadow-[0_22px_65px_rgba(62,39,35,0.05)]"
+            >
+              <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C0713A]">
+                {section.label}
               </div>
-            )
-          })}
+              <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.04em] text-[#3E2723]">
+                {section.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-[#72584D]">
+                {section.body}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <InvestorHeading
-              label="Problem"
-              title="Spiritual demand is strong. Product coherence is still weak."
-              body="Users do not experience their spiritual life in separate silos, yet software products often force exactly that separation."
-            />
-          </div>
-          <div className="grid gap-4">
-            {problemPoints.map((point, index) => (
-              <div key={point} className="flex gap-4 rounded-[1.6rem] border border-[#F0D7C6] bg-white/84 p-5 shadow-[0_18px_50px_rgba(62,39,35,0.05)]">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFF1E4] text-sm font-semibold text-[#E8752A]">
-                  0{index + 1}
-                </div>
-                <p className="text-sm leading-7 text-[#6B5145]">{point}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <InvestorHeading
-          label="Solution"
-          title="DevBhumi works because it behaves like a spiritual companion, not just a utility."
-          body="The strongest version of the business is not a single feature. It is a connected product system where guidance, ritual, insight, and media reinforce each other."
+        <DeckHeading
+          label="04. Product Proof"
+          title="The most persuasive pitch-deck slide here is the product itself."
+          body="Instead of relying on decorative charts, this page should show that the company already has credible consumer product surfaces and a deeper system behind them."
           center
         />
 
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
-          {solutionPillars.map((pillar) => {
-            const Icon = pillar.icon
+          {productProof.map((item) => {
+            const Icon = item.icon;
 
             return (
-              <div key={pillar.title} className="rounded-[1.85rem] border border-[#F0D7C6] bg-white/84 p-6 shadow-[0_20px_65px_rgba(62,39,35,0.06)]">
-                <div className="inline-flex rounded-2xl bg-[#FFF4E7] p-3 text-[#E8752A]">
-                  <Icon className="h-5 w-5" />
+              <div
+                key={item.title}
+                className="overflow-hidden rounded-[2rem] border border-[#F0D7C6] bg-white/86 shadow-[0_22px_65px_rgba(62,39,35,0.06)]"
+              >
+                <div className="border-b border-[#F1E0D3] p-6">
+                  <div className="inline-flex rounded-2xl bg-[#FFF4E7] p-3 text-[#E8752A]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[#72584D]">
+                    {item.body}
+                  </p>
                 </div>
-                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">{pillar.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#72584D]">{pillar.body}</p>
+                <div className="bg-[#FFF8F2] p-4">
+                  <div className="rounded-[1.5rem] border border-white/80 bg-white p-3 shadow-[0_12px_28px_rgba(62,39,35,0.06)]">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={360}
+                      height={760}
+                      className="h-auto w-full rounded-[1.2rem] border border-[#F0D7C6]"
+                    />
+                  </div>
+                </div>
               </div>
-            )
+            );
           })}
         </div>
       </section>
@@ -322,49 +376,34 @@ export default function InvestorPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <InvestorHeading
-              label="Moat"
-              title="The moat comes from category design plus operational control."
-              body="The product already hints at a stronger long-term position than a single-purpose spiritual app because it can own more of the user's daily spiritual loop."
+            <DeckHeading
+              label="05. Market Thesis"
+              title="This is less about owning one narrow feature category and more about owning a broader spiritual loop."
+              body="The company can be positioned around a market truth investors understand quickly: adjacent products serve separate jobs, while DevBhumi can combine them into a more valuable daily relationship."
             />
           </div>
-          <div className="rounded-[2rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)]">
-            <div className="grid gap-4">
-              {moatPoints.map((point) => (
-                <div key={point} className="flex gap-3 rounded-2xl border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4">
-                  <Check className="mt-1 h-4 w-4 shrink-0 text-[#E8752A]" />
-                  <p className="text-sm leading-7 text-[#654C40]">{point}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <div className="rounded-[2.2rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] sm:p-10 lg:p-12">
-          <InvestorHeading
-            label="Competitive Position"
-            title="The best opportunity is to bridge what existing products keep separate."
-            body="This is where the investor story gets strongest. DevBhumi does not need to beat every category leader at their narrowest strength. It needs to become the product that combines the layers users actually want together."
-          />
-
-          <div className="mt-10 overflow-hidden rounded-[1.8rem] border border-[#F3E1D4]">
-            <div className="hidden grid-cols-[1fr_1fr_1fr_1.1fr] gap-px bg-[#F3E1D4] text-sm font-semibold text-[#5E4337] lg:grid">
-              <div className="bg-[#FFF6EE] px-5 py-4">Category</div>
-              <div className="bg-[#FFF6EE] px-5 py-4">What current products do well</div>
-              <div className="bg-[#FFF6EE] px-5 py-4">What remains missing</div>
-              <div className="bg-[#FFF6EE] px-5 py-4">Why DevBhumi can win</div>
-            </div>
-
-            {comparisonRows.map((row) => (
-              <div key={row.category} className="border-t border-[#F3E1D4] first:border-t-0">
-                <div className="grid gap-px bg-[#F3E1D4] lg:grid-cols-[1fr_1fr_1fr_1.1fr]">
-                  <div className="bg-white px-5 py-5 text-lg font-semibold tracking-[-0.03em] text-[#3E2723]">{row.category}</div>
-                  <div className="bg-white px-5 py-5 text-sm leading-7 text-[#72584D]">{row.current}</div>
-                  <div className="bg-white px-5 py-5 text-sm leading-7 text-[#72584D]">{row.missing}</div>
-                  <div className="bg-white px-5 py-5 text-sm leading-7 text-[#5B3F34]">{row.devbhumi}</div>
-                </div>
+          <div className="grid gap-4">
+            {marketLens.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[1.7rem] border border-[#F0D7C6] bg-white/86 p-5 shadow-[0_18px_50px_rgba(62,39,35,0.05)]"
+              >
+                <h3 className="text-lg font-semibold tracking-[-0.03em] text-[#3E2723]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#72584D]">
+                  <span className="font-semibold text-[#5F473C]">
+                    Current strength:
+                  </span>{" "}
+                  {item.current}
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[#72584D]">
+                  <span className="font-semibold text-[#5F473C]">
+                    What remains open:
+                  </span>{" "}
+                  {item.gap}
+                </p>
               </div>
             ))}
           </div>
@@ -372,33 +411,70 @@ export default function InvestorPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <div className="rounded-[2rem] border border-[#F0D7C6] bg-white/84 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)]">
-            <InvestorHeading
-              label="Business Model"
-              title="Monetization can layer on top of retention, not replace it."
-              body="The strongest revenue model follows from a product that earns repeat attention first."
+        <DeckHeading
+          label="06. Moat"
+          title="The moat is category design, product breadth, and backend control."
+          body="That framing is more credible than claiming a pure technology moat alone. The platform becomes stronger because multiple product surfaces and operational capabilities reinforce each other."
+          center
+        />
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {moatBlocks.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={item.title}
+                className="rounded-[1.8rem] border border-[#F0D7C6] bg-white/86 p-6 shadow-[0_20px_60px_rgba(62,39,35,0.05)]"
+              >
+                <div className="inline-flex rounded-2xl bg-[#FFF4E7] p-3 text-[#E8752A]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#72584D]">
+                  {item.text}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-[2rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_22px_65px_rgba(62,39,35,0.05)]">
+            <DeckHeading
+              label="07. Business Model"
+              title="Monetization should sit on top of trust and repeat use."
+              body="A clean investor story here is stronger than a noisy chart. The business model can layer naturally on top of habit, high-intent insight, and premium spiritual experiences."
             />
             <div className="mt-8 grid gap-3">
-              {revenueStreams.map((stream) => (
-                <div key={stream} className="rounded-2xl border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4 text-sm leading-7 text-[#654C40]">
-                  {stream}
+              {businessModel.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4 text-sm leading-7 text-[#654C40]"
+                >
+                  {item}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-[#F0D7C6] bg-white/84 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)]">
-            <InvestorHeading
-              label="Roadmap"
-              title="The roadmap is clearest when it compounds the system you already have."
-              body="The current app and admin panel already establish the right shape. The next phase is refinement, monetization, retention, and distribution leverage."
+          <div className="rounded-[2rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_22px_65px_rgba(62,39,35,0.05)]">
+            <DeckHeading
+              label="08. Go-To-Market"
+              title="The GTM story should emphasize distribution plus retention, not only awareness."
+              body="Investors want to know how the product gets adopted and why usage compounds. That makes the growth story more believable than vanity acquisition claims."
             />
-            <div className="mt-8 grid gap-4">
-              {roadmap.map((item) => (
-                <div key={item.stage} className="flex gap-4 rounded-[1.5rem] border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4">
-                  <div className="min-w-20 text-sm font-semibold text-[#E8752A]">{item.stage}</div>
-                  <p className="text-sm leading-7 text-[#654C40]">{item.detail}</p>
+            <div className="mt-8 grid gap-3">
+              {gtmBlocks.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4 text-sm leading-7 text-[#654C40]"
+                >
+                  {item}
                 </div>
               ))}
             </div>
@@ -407,28 +483,34 @@ export default function InvestorPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <div className="overflow-hidden rounded-[2.2rem] border border-[#F0D7C6] bg-[linear-gradient(135deg,#FFF7EE_0%,#FFE7CF_46%,#FFF8F0_100%)] p-8 shadow-[0_30px_90px_rgba(232,117,42,0.14)] sm:p-10 lg:p-12">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="overflow-hidden rounded-[2.2rem] border border-[#F0D7C6] bg-[linear-gradient(135deg,#FFF7EE_0%,#FFE7CF_46%,#FFF8F0_100%)] p-8 shadow-[0_28px_90px_rgba(232,117,42,0.12)] sm:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_0.98fr] lg:items-center">
             <div>
-              <InvestorHeading
-                label="The Ask"
-                title="The cleanest investor pitch is simple: back the product that can own more of the daily spiritual loop."
-                body="The use of capital is ultimately about improving product quality, strengthening the content and AI layer, and scaling distribution around a category that still has room for a leader."
+              <DeckHeading
+                label="09. The Ask"
+                title="The complete pitch-deck story ends with a focused use of capital, not decorative financial theater."
+                body="The best seed story for DevBhumi is disciplined: use capital to sharpen product quality, deepen the operating system underneath it, and scale growth around a clear category position."
               />
             </div>
 
             <div className="rounded-[1.9rem] border border-white/75 bg-white/88 p-6 shadow-[0_20px_60px_rgba(62,39,35,0.08)]">
               <div className="grid gap-3">
-                {fundUse.map((item) => (
-                  <div key={item.area} className="flex items-center justify-between rounded-2xl border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4">
-                    <span className="text-sm font-medium text-[#5F463A]">{item.area}</span>
-                    <span className="text-lg font-semibold text-[#E8752A]">{item.pct}</span>
+                {askBlocks.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-[#F5E4D8] bg-[#FFF9F4] px-4 py-4 text-sm leading-7 text-[#654C40]"
+                  >
+                    {item}
                   </div>
                 ))}
               </div>
 
               <div className="mt-6 rounded-2xl bg-[#FFF4E7] px-4 py-4 text-sm leading-7 text-[#71574B]">
-                The strongest next step is a disciplined seed story around product refinement, retention, premium packaging, and strategic growth rather than overcomplicated forecasting theater.
+                Structure reference used for this page comes from common
+                investor expectations highlighted by Sequoia’s business-plan
+                outline and CRV’s 2026 seed-stage guidance: clear purpose,
+                problem, solution, why now, market, product, competition,
+                business model, team, and traction.
               </div>
 
               <div className="mt-6 flex flex-col gap-3">
@@ -453,29 +535,33 @@ export default function InvestorPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-4 sm:pb-24">
-        <div className="rounded-[1.8rem] border border-[#F0D7C6] bg-white/84 p-6 shadow-[0_20px_60px_rgba(62,39,35,0.05)]">
+        <div className="rounded-[1.8rem] border border-[#F0D7C6] bg-white/86 p-6 shadow-[0_18px_50px_rgba(62,39,35,0.05)]">
           <div className="grid gap-4 md:grid-cols-3">
             <div className="flex gap-3">
               <BookOpen className="mt-1 h-5 w-5 text-[#E8752A]" />
               <p className="text-sm leading-7 text-[#6A5145]">
-                Competitive framing on the main landing page references current public product positioning from Hallow, Headspace, Astrotalk, Sri Mandir, and Shloka.
+                The page now follows a more complete pitch-deck flow instead of
+                reading like a styled marketing page with random sections.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <HeartHandshake className="mt-1 h-5 w-5 text-[#E8752A]" />
+              <p className="text-sm leading-7 text-[#6A5145]">
+                I intentionally reduced chart-like elements and heavy number
+                styling so it feels cleaner and more executive.
               </p>
             </div>
             <div className="flex gap-3">
               <Shield className="mt-1 h-5 w-5 text-[#E8752A]" />
               <p className="text-sm leading-7 text-[#6A5145]">
-                This page is intentionally cleaner and more thesis-led so it reads well to investors, managers, and executive stakeholders.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <Sparkles className="mt-1 h-5 w-5 text-[#E8752A]" />
-              <p className="text-sm leading-7 text-[#6A5145]">
-                The narrative now emphasizes what is real in the codebase today while leaving room for future financial-detail expansion later.
+                The argument is now grounded in what is visibly real in this
+                codebase today: product breadth, backend depth, and category
+                position.
               </p>
             </div>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

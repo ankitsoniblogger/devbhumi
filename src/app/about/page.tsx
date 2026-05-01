@@ -1,170 +1,141 @@
-'use client'
+import { BookOpen, HeartHandshake, Layers3, Sparkles, Users } from 'lucide-react'
 
-import { motion } from 'framer-motion'
-import { pageVariants, sectionReveal, staggerContainer, staggerItem, viewportConfig } from '@/lib/animations'
-import { SectionLabel } from '@/components/ui/SectionLabel'
-import { GlowCard } from '@/components/ui/GlowCard'
-
-const advisors = [
-  { name: 'Dr. Anand Sharma', role: 'Sanskrit Scholar, BHU', focus: 'Vedantic Philosophy' },
-  { name: 'Pandit Ramesh Iyer', role: 'Head Priest, Meenakshi Temple', focus: 'Temple Rituals & Agamas' },
-  { name: 'Dr. Priya Venkatesh', role: 'Indology Professor, JNU', focus: 'Comparative Theology' },
-  { name: 'Swami Vivekananda Das', role: 'ISKCON Scholar', focus: 'Bhakti Tradition' },
+const principles = [
+  {
+    title: 'Respect the tradition',
+    body: 'We are not trying to flatten Hindu wisdom into generic wellness copy. The product should feel culturally rooted, emotionally intelligent, and spiritually respectful.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Use technology with intention',
+    body: 'AI should improve accessibility, continuity, and everyday guidance. It should not pretend to replace lived practice, community, or spiritual authority.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Build a system, not a gimmick',
+    body: 'DevBhumi is strongest when consumer product, devotional content, and operational tooling all work together as one platform.',
+    icon: Layers3,
+  },
 ]
 
 const team = [
-  { name: 'Ankit Soni', role: 'Founder & CEO', bio: 'Building at the intersection of AI and spirituality. Previously in fintech.' },
-  { name: 'Priya Patel', role: 'CTO', bio: 'AI/ML engineer with 10 years of NLP experience. IIT Bombay.' },
-  { name: 'Arjun Menon', role: 'Head of Content', bio: 'Sanskrit scholar turned product builder. 5 years in ed-tech.' },
-  { name: 'Kavya Reddy', role: 'Lead Designer', bio: 'Design systems architect. Passionate about cultural UI/UX.' },
-  { name: 'Rohan Gupta', role: 'Backend Lead', bio: 'Scaled distributed systems at Flipkart. IIT Delhi.' },
-  { name: 'Meera Joshi', role: 'Community Lead', bio: 'Built 100K+ communities in spiritual and wellness spaces.' },
+  { name: 'Ankit Soni', role: 'Founder & CEO', bio: 'Driving the product vision at the intersection of spiritual experience, mobile behavior, and AI.' },
+  { name: 'Product & Design', role: 'Experience Team', bio: 'Focused on making devotional technology feel intentional, premium, and culturally grounded.' },
+  { name: 'Engineering & AI', role: 'Platform Team', bio: 'Building the systems that power guidance, content delivery, admin operations, and future scale.' },
 ]
 
-const openRoles = [
-  { title: 'Senior ML Engineer', location: 'Bengaluru / Remote', type: 'Full-time' },
-  { title: 'Sanskrit Content Researcher', location: 'Remote', type: 'Full-time' },
-  { title: 'React Native Developer', location: 'Bengaluru', type: 'Full-time' },
-]
+function PageHeading({
+  label,
+  title,
+  body,
+}: {
+  label: string
+  title: string
+  body: string
+}) {
+  return (
+    <div className="max-w-3xl">
+      <div className="text-xs font-semibold uppercase tracking-[0.24em] text-[#C0713A]">{label}</div>
+      <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.045em] text-[#3E2723] sm:text-5xl lg:text-6xl">
+        {title}
+      </h1>
+      <p className="mt-5 text-base leading-8 text-[#72584D] sm:text-lg">{body}</p>
+    </div>
+  )
+}
 
 export default function AboutPage() {
   return (
-    <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit" className="pt-16">
-      {/* Founder story */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="max-w-3xl">
-            <SectionLabel number="01" label="Our Story" />
-            <h1
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight mb-8"
-              style={{ fontSize: 'clamp(40px, 6vw, 72px)' }}
-            >
-              Why we built DevBhumi
-            </h1>
-            <div className="space-y-6 text-ink-400 leading-[1.75]">
-              <p>
-                Growing up in a devout Hindu family, I experienced the profound wisdom of our scriptures through my grandmother&apos;s stories. But as I grew older and moved to the city, that connection faded. The texts felt inaccessible — locked away in Sanskrit, scattered across thousands of pages, gatekept by academic jargon.
-              </p>
-              <p>
-                When I discovered what modern AI could do with language, I realized we could bridge this gap. Not to replace gurus or temples, but to make the ocean of Hindu wisdom as accessible as a conversation with a wise friend — in your language, on your phone, at any hour.
-              </p>
-              <p>
-                That&apos;s why DevBhumi exists. It&apos;s a labor of devotion, built by a team that deeply respects the tradition while embracing the technology that can bring it to a billion people.
-              </p>
+    <div className="overflow-x-hidden bg-[linear-gradient(180deg,#FFF8F0_0%,#FFF5EC_38%,#FFF8F0_100%)] pt-20 text-[#3E2723]">
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <div className="rounded-[2.3rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] sm:p-10 lg:p-12">
+          <PageHeading
+            label="About DevBhumi"
+            title="We’re building spiritual technology that feels more like companionship than utility."
+            body="DevBhumi began with a simple product question: what would a modern Hindu spiritual companion feel like if it respected both tradition and contemporary mobile behavior? The answer is not a single feature. It is a system that unifies guidance, ritual, insight, and devotional content into one experience."
+          />
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="rounded-[1.9rem] border border-[#F3E1D4] bg-[#FFF9F4] p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#E8752A] shadow-[0_8px_18px_rgba(232,117,42,0.08)]">
+                <BookOpen className="h-5 w-5" />
+              </div>
+              <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">Why we exist</h2>
+              <div className="mt-4 space-y-4 text-sm leading-7 text-[#6F5549] sm:text-base">
+                <p>
+                  Hindu wisdom is vast, layered, and deeply alive, but digital access to it is still fragmented.
+                  Many people want guidance, rhythm, and devotional depth in their everyday lives, yet today’s
+                  products usually give them only one narrow slice at a time.
+                </p>
+                <p>
+                  DevBhumi exists to close that gap. We want the product to feel approachable enough for daily use,
+                  but thoughtful enough to hold spiritual meaning with care.
+                </p>
+              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      <div className="section-divider" />
-
-      {/* Mission & Values */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-16">
-            <SectionLabel number="02" label="Mission" />
-            <h2
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight max-w-3xl mx-auto"
-              style={{ fontSize: 'clamp(36px, 5vw, 60px)' }}
-            >
-              Making 5,000 years of Hindu wisdom accessible to every seeker
-            </h2>
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="section-divider" />
-
-      {/* Advisory Board */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-12">
-            <SectionLabel number="03" label="Advisory Board" />
-            <h2
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight"
-              style={{ fontSize: 'clamp(36px, 5vw, 60px)' }}
-            >
-              Religious Advisory Board
-            </h2>
-          </motion.div>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-4 gap-4">
-            {advisors.map((a) => (
-              <motion.div key={a.name} variants={staggerItem}>
-                <GlowCard className="p-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-saffron-500/10 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-saffron-400 text-xl font-medium">{a.name.split(' ').map(n => n[0]).join('')}</span>
+            <div className="rounded-[1.9rem] border border-[#F3E1D4] bg-[linear-gradient(135deg,#FFF6EC,#FFF1E4)] p-6 shadow-[0_18px_45px_rgba(232,117,42,0.08)]">
+              <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C0713A]">What we’re building</div>
+              <div className="mt-5 grid gap-3">
+                {[
+                  'Deity-led guidance and conversation',
+                  'Kundli, horoscope, and predictive insight surfaces',
+                  'Bhajans, meditation, reminders, and devotional media',
+                  'An admin-controlled backend for content and product operations',
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-[#F2DED0] bg-white/84 px-4 py-4 text-sm leading-7 text-[#6B5145]">
+                    {item}
                   </div>
-                  <h3 className="text-ink-50 font-medium mb-1">{a.name}</h3>
-                  <p className="text-xs text-ink-500 mb-2">{a.role}</p>
-                  <p className="text-xs text-saffron-400">{a.focus}</p>
-                </GlowCard>
-              </motion.div>
-            ))}
-          </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="section-divider" />
+      <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
+        <PageHeading
+          label="Principles"
+          title="The product should feel premium, respectful, and useful every day."
+          body="These principles shape how we think about the category, the interface, and the role of AI inside a spiritual product."
+        />
 
-      {/* Team */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-12">
-            <SectionLabel number="04" label="Team" />
-            <h2
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight"
-              style={{ fontSize: 'clamp(36px, 5vw, 60px)' }}
-            >
-              The humans behind DevBhumi
-            </h2>
-          </motion.div>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-3 gap-4">
-            {team.map((t) => (
-              <motion.div key={t.name} variants={staggerItem}>
-                <GlowCard className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-saffron-500/10 flex items-center justify-center mb-4">
-                    <span className="text-saffron-400 font-medium">{t.name.split(' ').map(n => n[0]).join('')}</span>
-                  </div>
-                  <h3 className="text-ink-50 font-medium mb-0.5">{t.name}</h3>
-                  <p className="text-xs text-saffron-400 mb-3">{t.role}</p>
-                  <p className="text-sm text-ink-400">{t.bio}</p>
-                </GlowCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <div className="section-divider" />
-
-      {/* Hiring */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="text-center mb-12">
-            <SectionLabel number="05" label="Careers" />
-            <h2
-              className="font-[family-name:var(--font-cormorant)] text-ink-50 font-light leading-tight mb-4"
-              style={{ fontSize: 'clamp(36px, 5vw, 60px)' }}
-            >
-              We&apos;re hiring
-            </h2>
-            <p className="text-ink-400 max-w-xl mx-auto">Join us in building the future of spiritual technology. We&apos;re a small, passionate team in Bengaluru with big ambitions.</p>
-          </motion.div>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="max-w-2xl mx-auto space-y-3">
-            {openRoles.map((role) => (
-              <motion.div key={role.title} variants={staggerItem}>
-                <div className="bg-bg-elevated border border-border-subtle rounded-xl px-6 py-4 flex items-center justify-between hover:border-border-hover transition-colors cursor-pointer">
-                  <div>
-                    <h3 className="text-ink-200 font-medium">{role.title}</h3>
-                    <p className="text-xs text-ink-500 mt-0.5">{role.location} &middot; {role.type}</p>
-                  </div>
-                  <span className="text-saffron-400 text-sm">&rarr;</span>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {principles.map((item) => {
+            const Icon = item.icon
+            return (
+              <div key={item.title} className="rounded-[1.85rem] border border-[#F0D7C6] bg-white/86 p-6 shadow-[0_20px_60px_rgba(62,39,35,0.05)]">
+                <div className="inline-flex rounded-2xl bg-[#FFF4E7] p-3 text-[#E8752A]">
+                  <Icon className="h-5 w-5" />
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">{item.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#72584D]">{item.body}</p>
+              </div>
+            )
+          })}
         </div>
       </section>
-    </motion.div>
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 pt-14 sm:pb-24 sm:pt-20">
+        <PageHeading
+          label="Team"
+          title="A small team shaping the category with product, design, and systems thinking."
+          body="This page keeps the team framing simple and credible. As the company grows, this can expand into founder background, advisory voices, and domain expertise."
+        />
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {team.map((member) => (
+            <div key={member.name} className="rounded-[1.85rem] border border-[#F0D7C6] bg-white/86 p-6 shadow-[0_20px_60px_rgba(62,39,35,0.05)]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FFF4E7] text-[#E8752A]">
+                <Users className="h-5 w-5" />
+              </div>
+              <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-[#3E2723]">{member.name}</h2>
+              <div className="mt-1 text-sm font-semibold text-[#C0713A]">{member.role}</div>
+              <p className="mt-3 text-sm leading-7 text-[#72584D]">{member.bio}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   )
 }

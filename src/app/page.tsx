@@ -211,8 +211,8 @@ export default function HomePage() {
   return (
     <div className="overflow-x-hidden text-[#3E2723]">
       <section id="top" className="relative isolate pt-28">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[44rem] bg-[radial-gradient(circle_at_top,rgba(232,117,42,0.22),transparent_60%)]" />
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 pb-24 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div className="absolute inset-x-0 top-0 -z-10 h-[44rem] bg-[radial-gradient(circle_at_top,rgba(232,117,42,0.18),transparent_58%)]" />
+        <div className="mx-auto grid max-w-7xl gap-18 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#F5C9A8] bg-white/80 px-4 py-2 text-sm font-medium text-[#A4511A] shadow-[0_10px_30px_rgba(232,117,42,0.08)] backdrop-blur">
               <MoonStar className="h-4 w-4" />
@@ -220,8 +220,8 @@ export default function HomePage() {
             </div>
 
             <h1 className="mt-7 text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-[#3E2723] sm:text-6xl lg:text-7xl">
-              A modern Hindu spiritual companion that feels
-              <span className="bg-gradient-to-r from-[#E8752A] to-[#FF8C00] bg-clip-text text-transparent"> calm, premium, and investable.</span>
+              A modern Hindu spiritual companion designed to feel
+              <span className="bg-gradient-to-r from-[#E8752A] to-[#FF8C00] bg-clip-text text-transparent"> credible, premium, and unforgettable.</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6E554B] sm:text-xl">
@@ -246,129 +246,201 @@ export default function HomePage() {
                 <HeartHandshake className="h-4 w-4" />
               </Link>
             </div>
-
-            <div className="mt-12 grid gap-4 sm:grid-cols-3">
-              {[
-                ['Product Stack', 'AI + Bhakti', 'Conversation, insight, media, and ritual inside one system.'],
-                ['Operational Depth', 'Admin CMS', 'Push, users, content, chats, settings, and monitoring already exist.'],
-                ['Market Position', 'Category Bridge', 'Prayer, astrology, scripture, and devotional media intersect here.'],
-              ].map(([eyebrow, title, text]) => (
-                <div
-                  key={title}
-                  className="rounded-[1.8rem] border border-white/70 bg-white/80 p-5 shadow-[0_18px_45px_rgba(62,39,35,0.06)] backdrop-blur"
-                >
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B56E3B]">{eyebrow}</div>
-                  <div className="mt-3 text-2xl font-semibold tracking-[-0.05em] text-[#3E2723]">{title}</div>
-                  <p className="mt-3 text-sm leading-6 text-[#7A6055]">{text}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-[43rem]">
-            <div className="absolute left-1/2 top-[18%] -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,183,77,0.45),rgba(232,117,42,0.08),transparent_70%)] blur-2xl" />
-            <div className="grid gap-5 lg:grid-cols-[0.78fr_1fr]">
-              <div className="space-y-5 lg:pt-16">
-                <div className="float-gentle rounded-[2rem] border border-white/80 bg-white/88 p-3 shadow-[0_24px_80px_rgba(62,39,35,0.12)] backdrop-blur">
-                  <div className="mb-3 flex items-center gap-3 rounded-2xl bg-[#FFF5EC] px-4 py-3">
+            <div className="absolute left-1/2 top-[20%] -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,183,77,0.4),rgba(232,117,42,0.07),transparent_72%)] blur-2xl" />
+            <div className="rounded-[2.4rem] border border-white/80 bg-white/72 p-4 shadow-[0_28px_90px_rgba(62,39,35,0.09)] backdrop-blur">
+              <div className="rounded-[2rem] border border-[#F2DED0] bg-[linear-gradient(135deg,rgba(255,248,240,0.95),rgba(255,241,229,0.92))] p-5 sm:p-6">
+                <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center gap-3 rounded-2xl bg-white/75 px-4 py-3 shadow-[0_10px_24px_rgba(62,39,35,0.05)]">
                     <Image src="/brand/omlogo.png" alt="DevBhumi Om symbol" width={34} height={34} className="h-9 w-9 rounded-xl" />
                     <div>
                       <div className="text-sm font-semibold text-[#3E2723]">Divine Connect</div>
                       <div className="text-xs text-[#8E6F61]">Seek Guidance. Find Peace.</div>
                     </div>
                   </div>
-                  <Image
-                    src="/showcase/home-light.jpeg"
-                    alt="Home screen from the Flutter app"
-                    width={520}
-                    height={980}
-                    className="h-auto w-full rounded-[1.5rem] border border-[#F3E1D4]"
-                  />
-                </div>
-                <div className="rounded-[2rem] border border-[#F6D5BE] bg-[#FFF3E6] p-5 shadow-[0_18px_50px_rgba(232,117,42,0.12)]">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-2xl bg-white/80 p-3 text-[#E8752A]">
-                      <MonitorCog className="h-5 w-5" />
+
+                  <div className="flex items-center gap-3 rounded-2xl border border-[#F2D9C6] bg-[#FFF6EE] px-4 py-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#E8752A] shadow-[0_8px_20px_rgba(232,117,42,0.08)]">
+                      <MonitorCog className="h-4 w-4" />
                     </div>
                     <div>
-                      <div className="text-lg font-semibold tracking-[-0.03em] text-[#3E2723]">Not just a front-end demo</div>
-                      <p className="mt-1 text-sm leading-6 text-[#7A6055]">
-                        The admin platform already covers content, shorts, bhajans, deities, users, chats,
-                        notifications, app settings, and monitor views.
-                      </p>
+                      <div className="text-sm font-semibold text-[#3E2723]">Full product system</div>
+                      <div className="text-xs text-[#8E6F61]">App + admin layer already built</div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="grid gap-5">
-                <div className="rounded-[2rem] border border-white/80 bg-white/88 p-3 shadow-[0_24px_80px_rgba(62,39,35,0.12)] backdrop-blur">
-                  <Image
-                    src="/showcase/deity-selection.jpeg"
-                    alt="Deity selection screen"
-                    width={460}
-                    height={920}
-                    className="h-auto w-full rounded-[1.5rem] border border-[#F3E1D4]"
-                  />
-                </div>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="rounded-[2rem] border border-white/75 bg-white/90 p-3 shadow-[0_18px_60px_rgba(62,39,35,0.1)]">
+                <div className="grid gap-5 lg:grid-cols-[1fr_0.72fr]">
+                  <div className="rounded-[1.9rem] border border-white/80 bg-white/86 p-3 shadow-[0_20px_55px_rgba(62,39,35,0.08)]">
                     <Image
-                      src="/showcase/bhajan.jpeg"
-                      alt="Bhajan experience"
-                      width={320}
-                      height={700}
-                      className="h-auto w-full rounded-[1.4rem] border border-[#F3E1D4]"
+                      src="/showcase/home-light.jpeg"
+                      alt="Home screen from the Flutter app"
+                      width={560}
+                      height={1040}
+                      className="h-auto w-full rounded-[1.45rem] border border-[#F3E1D4]"
                     />
                   </div>
-                  <div className="rounded-[2rem] border border-white/75 bg-white/90 p-3 shadow-[0_18px_60px_rgba(62,39,35,0.1)] sm:translate-y-10">
-                    <Image
-                      src="/showcase/profile.jpeg"
-                      alt="Profile and settings screen"
-                      width={320}
-                      height={700}
-                      className="h-auto w-full rounded-[1.4rem] border border-[#F3E1D4]"
-                    />
+
+                  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+                    <div className="rounded-[1.8rem] border border-white/80 bg-white/88 p-3 shadow-[0_18px_50px_rgba(62,39,35,0.08)]">
+                      <Image
+                        src="/showcase/deity-selection.jpeg"
+                        alt="Deity selection screen"
+                        width={340}
+                        height={720}
+                        className="h-auto w-full rounded-[1.3rem] border border-[#F3E1D4]"
+                      />
+                    </div>
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
+                      <div className="rounded-[1.7rem] border border-white/75 bg-white/90 p-3 shadow-[0_16px_40px_rgba(62,39,35,0.08)]">
+                        <Image
+                          src="/showcase/bhajan.jpeg"
+                          alt="Bhajan experience"
+                          width={260}
+                          height={560}
+                          className="h-auto w-full rounded-[1.2rem] border border-[#F3E1D4]"
+                        />
+                      </div>
+                      <div className="rounded-[1.7rem] border border-white/75 bg-white/90 p-3 shadow-[0_16px_40px_rgba(62,39,35,0.08)]">
+                        <Image
+                          src="/showcase/profile.jpeg"
+                          alt="Profile and settings screen"
+                          width={260}
+                          height={560}
+                          className="h-auto w-full rounded-[1.2rem] border border-[#F3E1D4]"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="opportunity" className="mx-auto max-w-7xl px-6 py-12 sm:py-20">
-        <div className="rounded-[2.2rem] border border-[#F0D7C6] bg-white/84 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] backdrop-blur sm:p-10 lg:p-12">
-          <SectionHeading
-            label="Why Now"
-            title="The spiritual-tech market is real, but still fragmented across single-purpose products."
-            body="Users still bounce between meditation apps, astrology marketplaces, devotional utilities, and scripture tools. DevBhumi becomes stronger when presented as the Hindu-native operating layer that unifies those behaviors."
-          />
-
-          <div className="mt-10 grid gap-4 lg:grid-cols-4">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-10">
+          <div className="grid gap-4 sm:grid-cols-3">
             {[
-              ['Prayer', 'Habit, calm, and reflection'],
-              ['Astrology', 'Prediction, consultation, and timing'],
-              ['Devotion', 'Bhajans, pooja, and ritual identity'],
-              ['Scripture', 'Daily wisdom, reflection, and study'],
-            ].map(([title, text]) => (
-              <div key={title} className="rounded-[1.65rem] border border-[#F3E1D4] bg-[#FFF8F2] p-6">
-                <div className="text-sm font-semibold text-[#E8752A]">{title}</div>
-                <p className="mt-3 text-sm leading-7 text-[#71574B]">{text}</p>
+              ['Product Stack', 'AI + Bhakti', 'Conversation, insight, media, and ritual inside one system.'],
+              ['Operational Depth', 'Admin CMS', 'Push, users, content, chats, settings, and monitoring already exist.'],
+              ['Market Position', 'Category Bridge', 'Prayer, astrology, scripture, and devotional media intersect here.'],
+            ].map(([eyebrow, title, text]) => (
+              <div
+                key={title}
+                className="rounded-[1.8rem] border border-white/70 bg-white/80 p-5 shadow-[0_18px_45px_rgba(62,39,35,0.06)] backdrop-blur"
+              >
+                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B56E3B]">{eyebrow}</div>
+                <div className="mt-3 text-2xl font-semibold tracking-[-0.05em] text-[#3E2723]">{title}</div>
+                <p className="mt-3 text-sm leading-6 text-[#7A6055]">{text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="experience" className="mx-auto max-w-7xl px-6 py-16 sm:py-24">
-        <SectionHeading
-          label="Product Experience"
-          title="A tighter, more premium product story built around stacked mobile moments."
-          body="Instead of flat feature blocks, the experience section now behaves more like a high-end product deck. Each story combines real app screens, a clear use case, and a sharper business implication."
-        />
+      <section id="opportunity" className="mx-auto max-w-7xl px-6 py-12 sm:py-20">
+        <div className="rounded-[2.2rem] border border-[#F0D7C6] bg-white/84 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] backdrop-blur sm:p-10 lg:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+            <SectionHeading
+              label="Why Now"
+              title="The spiritual-tech market is real, but still fragmented across single-purpose products."
+              body="Users still bounce between meditation apps, astrology marketplaces, devotional utilities, and scripture tools. DevBhumi becomes stronger when presented as the Hindu-native operating layer that unifies those behaviors."
+            />
 
-        <div className="mt-12 space-y-8">
+            <div className="rounded-[1.9rem] border border-[#F3E1D4] bg-[linear-gradient(135deg,#FFF9F4,#FFF3E6)] p-5 shadow-[0_18px_50px_rgba(232,117,42,0.08)]">
+              <div className="rounded-[1.6rem] border border-white/80 bg-white/86 p-5 shadow-[0_10px_24px_rgba(62,39,35,0.04)]">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF4E7] text-[#E8752A] shadow-[0_8px_18px_rgba(232,117,42,0.08)]">
+                    <Sparkles className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-[#3E2723]">Four behaviors, one platform</div>
+                    <div className="text-xs text-[#8B6D60]">What users already do across separate apps</div>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid grid-cols-2 gap-3">
+                  {[
+                    {
+                      title: 'Prayer',
+                      text: 'Reflection and daily calm',
+                      icon: HeartHandshake,
+                    },
+                    {
+                      title: 'Astrology',
+                      text: 'Timing and prediction',
+                      icon: Stars,
+                    },
+                    {
+                      title: 'Devotion',
+                      text: 'Bhajans and ritual identity',
+                      icon: Bell,
+                    },
+                    {
+                      title: 'Scripture',
+                      text: 'Wisdom and study',
+                      icon: BookOpen,
+                    },
+                  ].map((item) => {
+                    const Icon = item.icon
+
+                    return (
+                      <div
+                        key={item.title}
+                        className="rounded-[1.3rem] border border-[#F4E4D8] bg-[#FFF9F4] p-4"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#E8752A] shadow-[0_8px_18px_rgba(232,117,42,0.08)]">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div className="mt-3 text-sm font-semibold text-[#3E2723]">{item.title}</div>
+                        <p className="mt-1 text-xs leading-6 text-[#7D6356]">{item.text}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                <div className="mt-4 rounded-[1.3rem] border border-[#F4DECF] bg-[#FFF6EE] px-4 py-4 text-sm leading-7 text-[#6C5347]">
+                  DevBhumi becomes more compelling when these separate behaviors are presented as one coherent
+                  spiritual operating layer instead of four disconnected product categories.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-4">
+            {[
+              { title: 'Prayer', text: 'Habit, calm, and reflection', icon: HeartHandshake },
+              { title: 'Astrology', text: 'Prediction, consultation, and timing', icon: Stars },
+              { title: 'Devotion', text: 'Bhajans, pooja, and ritual identity', icon: Bell },
+              { title: 'Scripture', text: 'Daily wisdom, reflection, and study', icon: BookOpen },
+            ].map(({ title, text, icon: Icon }) => {
+
+              return (
+                <div key={title} className="rounded-[1.65rem] border border-[#F3E1D4] bg-[#FFF8F2] p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#E8752A] shadow-[0_8px_20px_rgba(232,117,42,0.07)]">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div className="mt-4 text-sm font-semibold text-[#E8752A]">{title}</div>
+                  <p className="mt-3 text-sm leading-7 text-[#71574B]">{text}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="relative isolate py-16 sm:py-24">
+        <div className="absolute inset-x-0 top-10 -z-10 h-[26rem] bg-[radial-gradient(circle_at_center,rgba(255,183,77,0.14),rgba(255,248,240,0.0)_68%)]" />
+        <div className="mx-auto max-w-7xl px-6">
+          <SectionHeading
+            label="Product Experience"
+            title="A tighter, more premium product story built around stacked mobile moments."
+            body="Instead of flat feature blocks, the experience section now behaves more like a high-end product deck. Each story combines real app screens, a clear use case, and a sharper business implication."
+          />
+
+          <div className="mt-12 space-y-8">
           {showcaseCards.map((group, index) => {
             const Icon = group.icon
 
@@ -428,6 +500,7 @@ export default function HomePage() {
               </div>
             )
           })}
+          </div>
         </div>
       </section>
 

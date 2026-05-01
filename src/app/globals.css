@@ -65,8 +65,10 @@
     @apply bg-background text-foreground;
     font-family: var(--font-inter-tight), system-ui, sans-serif;
     background-image:
-      radial-gradient(circle at top, rgba(255, 183, 77, 0.24), transparent 30%),
-      linear-gradient(180deg, #FFF8F0 0%, #FFF4E8 36%, #FFF8F0 100%);
+      radial-gradient(circle at top, rgba(255, 183, 77, 0.14), transparent 34%),
+      linear-gradient(180deg, #FFF8F0 0%, #FFF7F1 42%, #FFF8F0 100%);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 
   ::selection {
