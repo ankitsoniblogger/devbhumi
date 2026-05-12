@@ -13,7 +13,7 @@ const principles = [
   },
   {
     title: 'Build a system, not a gimmick',
-    body: 'DevBhumi is strongest when consumer product, devotional content, and operational tooling all work together as one platform.',
+    body: 'Divine Connect is strongest when consumer product, devotional content, and operational tooling all work together as one platform.',
     icon: Layers3,
   },
 ]
@@ -50,9 +50,9 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-6 py-14 sm:py-20">
         <div className="rounded-[2.3rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] sm:p-10 lg:p-12">
           <PageHeading
-            label="About DevBhumi"
+            label="About Divine Connect"
             title="We’re building spiritual technology that feels more like companionship than utility."
-            body="DevBhumi began with a simple product question: what would a modern Hindu spiritual companion feel like if it respected both tradition and contemporary mobile behavior? The answer is not a single feature. It is a system that unifies guidance, ritual, insight, and devotional content into one experience."
+            body="Divine Connect began with a simple product question: what would a modern Hindu spiritual companion feel like if it respected both tradition and contemporary mobile behavior? The answer is not a single feature. It is a system that unifies guidance, ritual, insight, and devotional content into one experience."
           />
 
           <div className="mt-10 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
@@ -68,7 +68,7 @@ export default function AboutPage() {
                   products usually give them only one narrow slice at a time.
                 </p>
                 <p>
-                  DevBhumi exists to close that gap. We want the product to feel approachable enough for daily use,
+                  Divine Connect exists to close that gap. We want the product to feel approachable enough for daily use,
                   but thoughtful enough to hold spiritual meaning with care.
                 </p>
               </div>

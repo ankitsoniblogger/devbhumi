@@ -27,9 +27,9 @@ const showcaseCards = [
       'The Flutter app already supports deity selection, topic-led prompts, saved answers, chat history, and personalized guidance flows built around Hindu context.',
     icon: MessageCircleHeart,
     stack: [
-      { src: '/showcase/deity-selection.jpeg', alt: 'Deity selection screen', className: 'rotate-[-8deg] -left-3 top-8 w-40 sm:w-48' },
-      { src: '/showcase/home-light.jpeg', alt: 'Light home screen', className: 'left-1/2 top-0 z-10 w-44 -translate-x-1/2 sm:w-56' },
-      { src: '/showcase/menu.jpeg', alt: 'App navigation menu', className: 'rotate-[8deg] -right-3 top-10 w-40 sm:w-48' },
+      { src: '/showcase/Geeta Gyan.jpeg', alt: 'Geeta Gyan screen', className: 'rotate-[-8deg] -left-3 top-8 w-40 sm:w-48' },
+      { src: '/showcase/Talk with God.jpeg', alt: 'Talk with God screen', className: 'left-1/2 top-0 z-10 w-44 -translate-x-1/2 sm:w-56' },
+      { src: '/showcase/ask question.jpeg', alt: 'Ask question screen', className: 'rotate-[8deg] -right-3 top-10 w-40 sm:w-48' },
     ],
     points: [
       'Choose a divine guide before a session begins',
@@ -42,12 +42,12 @@ const showcaseCards = [
     label: 'Prediction & Insight',
     title: 'Kundli, palm analysis, and Vedic guidance in one premium flow.',
     body:
-      'Instead of sending users to separate apps, DevBhumi combines kundli generation, horoscope surfaces, and image-based palm reading inside the same mobile experience.',
+      'Instead of sending users to separate apps, Divine Connect combines kundli generation, detailed horoscope, and image-based palm reading inside the same mobile experience.',
     icon: BrainCircuit,
     stack: [
-      { src: '/showcase/login.jpeg', alt: 'Login screen', className: 'rotate-[-7deg] -left-2 top-10 w-40 sm:w-48' },
-      { src: '/showcase/profile.jpeg', alt: 'Profile screen', className: 'left-1/2 top-0 z-10 w-44 -translate-x-1/2 sm:w-56' },
-      { src: '/showcase/quote.jpeg', alt: 'Daily quote screen', className: 'rotate-[8deg] -right-2 top-12 w-40 sm:w-48' },
+      { src: '/showcase/Kundli.jpeg', alt: 'Kundli screen', className: 'rotate-[-7deg] -left-2 top-10 w-40 sm:w-48' },
+      { src: '/showcase/palm reading.jpeg', alt: 'Palm reading screen', className: 'left-1/2 top-0 z-10 w-44 -translate-x-1/2 sm:w-56' },
+      { src: '/showcase/horoscope.jpeg', alt: 'Horoscope screen', className: 'rotate-[8deg] -right-2 top-12 w-40 sm:w-48' },
     ],
     points: [
       'AI-assisted kundli interpretation from birth details',
@@ -60,12 +60,12 @@ const showcaseCards = [
     label: 'Daily Ritual Loop',
     title: 'Bhajans, meditation, shorts, reminders, and calendar behavior that keep people coming back.',
     body:
-      'The product already contains the right repeat-use surfaces: devotional music, daily quotes, meditation timing, notifications, shorts, and a Hindu calendar rhythm.',
+      'The product already contains the right repeat-use surfaces: devotional music, daily quotes, meditation timing, daily streaks, shorts, and a Hindu calendar rhythm.',
     icon: Waves,
     stack: [
-      { src: '/showcase/bhajan.jpeg', alt: 'Bhajan library screen', className: 'rotate-[-8deg] -left-3 top-10 w-40 sm:w-48' },
-      { src: '/showcase/home-dark.jpeg', alt: 'Dark home screen', className: 'left-1/2 top-0 z-10 w-44 -translate-x-1/2 sm:w-56' },
-      { src: '/showcase/splash.jpeg', alt: 'Splash screen', className: 'rotate-[8deg] -right-3 top-10 w-40 sm:w-48' },
+      { src: '/showcase/meditation.jpeg', alt: 'Meditation screen', className: 'rotate-[-8deg] -left-3 top-10 w-40 sm:w-48' },
+      { src: '/showcase/shorts.jpeg', alt: 'Shorts feed screen', className: 'left-1/2 top-0 z-10 w-44 -translate-x-1/2 sm:w-56' },
+      { src: '/showcase/calender.jpeg', alt: 'Calendar screen', className: 'rotate-[8deg] -right-3 top-10 w-40 sm:w-48' },
     ],
     points: [
       'Bhajan listening by deity and devotional mood',
@@ -137,7 +137,7 @@ const marketRows = [
     category: 'Prayer habit apps',
     focus: 'Great at prayer routines, streaks, journaling, and calm.',
     gap: 'Usually centered on one narrow religious practice format.',
-    edge: 'DevBhumi combines ritual habit with AI guidance, prediction surfaces, devotional media, and Hindu identity.',
+    edge: 'Divine Connect combines ritual habit with AI guidance, prediction surfaces, devotional media, and Hindu identity.',
     sourceLabel: 'Hallow',
     sourceHref: 'https://hallow.com/features/',
   },
@@ -145,7 +145,7 @@ const marketRows = [
     category: 'Meditation apps',
     focus: 'Strong on mindfulness, sleep, coaching, and emotional wellness.',
     gap: 'Spiritually neutral and disconnected from scripture, deity, and ritual behavior.',
-    edge: 'DevBhumi roots calming experiences in culturally specific Hindu practice, not generic wellness.',
+    edge: 'Divine Connect roots calming experiences in culturally specific Hindu practice, not generic wellness.',
     sourceLabel: 'Headspace',
     sourceHref: 'https://www.headspace.com/app',
   },
@@ -153,7 +153,7 @@ const marketRows = [
     category: 'Astrology platforms',
     focus: 'Strong on consultative astrology, chat, calls, kundli, and horoscope.',
     gap: 'Often transactional and prediction-heavy, with weaker daily spiritual companionship.',
-    edge: 'DevBhumi extends insight into devotion, content, media, and long-term habit loops.',
+    edge: 'Divine Connect extends insight into devotion, content, media, and long-term habit loops.',
     sourceLabel: 'Astrotalk',
     sourceHref: 'https://astrotalk.com/chat-with-astrologer?searchText=astrotalk+free+online',
   },
@@ -161,7 +161,7 @@ const marketRows = [
     category: 'Devotional ritual apps',
     focus: 'Strong on pooja, temples, bhajans, panchang, and ritual access.',
     gap: 'Less personalized around problem-solving, AI guidance, and conversational companionship.',
-    edge: 'DevBhumi makes devotion interactive while keeping ritual, music, and calendar context.',
+    edge: 'Divine Connect makes devotion interactive while keeping ritual, music, and calendar context.',
     sourceLabel: 'Sri Mandir',
     sourceHref: 'https://www.srimandir.com/aboutus/en',
   },
@@ -225,7 +225,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6E554B] sm:text-xl">
-              DevBhumi turns the Flutter app into a sharper product story: deity-led AI conversation,
+              Divine Connect turns the Flutter app into a sharper product story: deity-led AI conversation,
               Vedic insight, devotional media, meditation, daily ritual guidance, and an admin-controlled
               spiritual content engine built for scale.
             </p>
@@ -254,7 +254,7 @@ export default function HomePage() {
               <div className="rounded-[2rem] border border-[#F2DED0] bg-[linear-gradient(135deg,rgba(255,248,240,0.95),rgba(255,241,229,0.92))] p-5 sm:p-6">
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-3 rounded-2xl bg-white/75 px-4 py-3 shadow-[0_10px_24px_rgba(62,39,35,0.05)]">
-                    <Image src="/brand/omlogo.png" alt="DevBhumi Om symbol" width={34} height={34} className="h-9 w-9 rounded-xl" />
+                    <Image src="/brand/omlogo.png" alt="Divine Connect Om symbol" width={34} height={34} className="h-9 w-9 rounded-xl" />
                     <div>
                       <div className="text-sm font-semibold text-[#3E2723]">Divine Connect</div>
                       <div className="text-xs text-[#8E6F61]">Seek Guidance. Find Peace.</div>
@@ -275,7 +275,7 @@ export default function HomePage() {
                 <div className="grid gap-5 lg:grid-cols-[1fr_0.72fr]">
                   <div className="rounded-[1.9rem] border border-white/80 bg-white/86 p-3 shadow-[0_20px_55px_rgba(62,39,35,0.08)]">
                     <Image
-                      src="/showcase/home-light.jpeg"
+                      src="/showcase/home.jpeg"
                       alt="Home screen from the Flutter app"
                       width={560}
                       height={1040}
@@ -286,8 +286,8 @@ export default function HomePage() {
                   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
                     <div className="rounded-[1.8rem] border border-white/80 bg-white/88 p-3 shadow-[0_18px_50px_rgba(62,39,35,0.08)]">
                       <Image
-                        src="/showcase/deity-selection.jpeg"
-                        alt="Deity selection screen"
+                        src="/showcase/Talk with God.jpeg"
+                        alt="Talk with God screen"
                         width={340}
                         height={720}
                         className="h-auto w-full rounded-[1.3rem] border border-[#F3E1D4]"
@@ -346,7 +346,7 @@ export default function HomePage() {
             <SectionHeading
               label="Why Now"
               title="The spiritual-tech market is real, but still fragmented across single-purpose products."
-              body="Users still bounce between meditation apps, astrology marketplaces, devotional utilities, and scripture tools. DevBhumi becomes stronger when presented as the Hindu-native operating layer that unifies those behaviors."
+              body="Users still bounce between meditation apps, astrology marketplaces, devotional utilities, and scripture tools. Divine Connect becomes stronger when presented as the Hindu-native operating layer that unifies those behaviors."
             />
 
             <div className="rounded-[1.9rem] border border-[#F3E1D4] bg-[linear-gradient(135deg,#FFF9F4,#FFF3E6)] p-5 shadow-[0_18px_50px_rgba(232,117,42,0.08)]">
@@ -402,7 +402,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="mt-4 rounded-[1.3rem] border border-[#F4DECF] bg-[#FFF6EE] px-4 py-4 text-sm leading-7 text-[#6C5347]">
-                  DevBhumi becomes more compelling when these separate behaviors are presented as one coherent
+                  Divine Connect becomes more compelling when these separate behaviors are presented as one coherent
                   spiritual operating layer instead of four disconnected product categories.
                 </div>
               </div>
@@ -532,8 +532,8 @@ export default function HomePage() {
         <div className="rounded-[2.2rem] border border-[#F0D7C6] bg-white/86 p-8 shadow-[0_24px_80px_rgba(62,39,35,0.06)] sm:p-10 lg:p-12">
           <SectionHeading
             label="Why We Are Different"
-            title="Most adjacent products win one layer. DevBhumi is stronger when it connects the full stack."
-            body="The comparison below is grounded in current public product positioning from official sites, then translated into a clearer investor-facing explanation of where DevBhumi can stand apart."
+            title="Most adjacent products win one layer. Divine Connect is stronger when it connects the full stack."
+            body="The comparison below is grounded in current public product positioning from official sites, then translated into a clearer investor-facing explanation of where Divine Connect can stand apart."
           />
 
           <div className="mt-10 overflow-hidden rounded-[1.8rem] border border-[#F3E1D4]">
@@ -541,7 +541,7 @@ export default function HomePage() {
               <div className="bg-[#FFF6EE] px-5 py-4">Category</div>
               <div className="bg-[#FFF6EE] px-5 py-4">Current market focus</div>
               <div className="bg-[#FFF6EE] px-5 py-4">Gap</div>
-              <div className="bg-[#FFF6EE] px-5 py-4">DevBhumi edge</div>
+              <div className="bg-[#FFF6EE] px-5 py-4">Divine Connect edge</div>
             </div>
 
             {marketRows.map((row) => (
@@ -569,7 +569,7 @@ export default function HomePage() {
             <SectionHeading
               label="Platform Story"
               title="The moat is not just AI. It is operational control over spiritual experiences."
-              body="Many spiritual products stop at content or consultation. DevBhumi already shows the beginnings of a programmable distribution layer: content publishing, deity curation, media feeds, notifications, user oversight, logs, and monitoring."
+              body="Many spiritual products stop at content or consultation. Divine Connect already shows the beginnings of a programmable distribution layer: content publishing, deity curation, media feeds, notifications, user oversight, logs, and monitoring."
             />
 
             <div className="mt-8 grid gap-4">
@@ -632,7 +632,7 @@ export default function HomePage() {
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.24em] text-[#C0713A]">Next Move</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#3E2723] sm:text-4xl lg:text-5xl">
-                DevBhumi is ready to be presented as a category-defining spiritual platform, not a feature list.
+                Divine Connect is ready to be presented as a category-defining spiritual platform, not a feature list.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-[#72584D] sm:text-lg">
                 This redesign reframes the product around what matters to users and stakeholders:

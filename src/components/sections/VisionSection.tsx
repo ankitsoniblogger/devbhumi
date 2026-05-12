@@ -50,7 +50,7 @@ export function VisionSection() {
               5,000 years of wisdom, finally in your pocket
             </h2>
             <p className="text-ink-400 leading-[1.75] mb-8">
-              We believe every devotee deserves a personal connection to the vast ocean of Hindu wisdom. DevBhumi bridges the gap between ancient scriptures and modern seekers, making the Vedas, Upanishads, and Puranas accessible through natural conversation — not academic jargon.
+              We believe every devotee deserves a personal connection to the vast ocean of Hindu wisdom. Divine Connect bridges the gap between ancient scriptures and modern seekers, making the Vedas, Upanishads, and Puranas accessible through natural conversation — not academic jargon.
             </p>
             <span
               className="absolute -top-8 -left-4 font-[family-name:var(--font-cormorant)] text-[120px] leading-none select-none pointer-events-none"

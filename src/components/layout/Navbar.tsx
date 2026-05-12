@@ -39,14 +39,14 @@ export function Navbar() {
             <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-[#F5D9C2] bg-white/88 shadow-[0_10px_24px_rgba(232,117,42,0.08)]">
               <Image
                 src="/icon.png"
-                alt="DevBhumi icon"
+                alt="Divine Connect icon"
                 width={44}
                 height={44}
                 className="h-full w-full object-cover"
               />
             </div>
             <div>
-              <div className="text-lg font-semibold tracking-[-0.04em] text-[#3E2723]">DevBhumi</div>
+              <div className="text-lg font-semibold tracking-[-0.04em] text-[#3E2723]">Divine Connect</div>
               <div className="text-xs text-[#A07D6C]">Seek Guidance. Find Peace.</div>
             </div>
           </Link>

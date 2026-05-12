@@ -17,9 +17,9 @@ const interTight = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'DevBhumi | Hindu Spiritual Companion Platform',
+  title: 'Divine Connect | Hindu Spiritual Companion Platform',
   description:
-    'DevBhumi unifies deity-led AI guidance, kundli, horoscope, bhajans, meditation, devotional shorts, and an admin-operated spiritual content platform.',
+    'Divine Connect unifies deity-led AI guidance, kundli, horoscope, bhajans, meditation, devotional shorts, and an admin-operated spiritual content platform.',
   keywords: [
     'Hindu spiritual app',
     'AI spiritual companion',
@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     'Vedic guidance',
   ],
   openGraph: {
-    title: 'DevBhumi | Hindu Spiritual Companion Platform',
+    title: 'Divine Connect | Hindu Spiritual Companion Platform',
     description:
       'A product story built from the real Flutter app: divine guidance, Vedic insight, devotional media, and operational backend control.',
     type: 'website',
     locale: 'en_IN',
-    siteName: 'DevBhumi',
+    siteName: 'Divine Connect',
   },
   icons: {
     icon: [

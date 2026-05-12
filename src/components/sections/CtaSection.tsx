@@ -35,7 +35,7 @@ export function CtaSection() {
         </motion.h2>
 
         <motion.p variants={staggerItem} className="text-ink-300 text-lg mb-10">
-          Join 500,000+ devotees already using DevBhumi.
+          Join 500,000+ devotees already using Divine Connect.
         </motion.p>
 
         <motion.div variants={staggerItem} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

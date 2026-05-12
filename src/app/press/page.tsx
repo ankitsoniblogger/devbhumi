@@ -1,7 +1,7 @@
 import { Download, FileText, Newspaper } from 'lucide-react'
 
 const coverage = [
-  { outlet: 'The Hindu', date: 'April 2026', headline: 'DevBhumi is making spiritual guidance feel native to the smartphone era.', tag: 'Feature' },
+  { outlet: 'The Hindu', date: 'April 2026', headline: 'Divine Connect is making spiritual guidance feel native to the smartphone era.', tag: 'Feature' },
   { outlet: 'YourStory', date: 'March 2026', headline: 'Why Hindu spiritual technology may become a serious new consumer category.', tag: 'Startup Story' },
   { outlet: 'Economic Times', date: 'March 2026', headline: 'AI, culture, and ritual behavior are converging in India’s next product wave.', tag: 'Analysis' },
   { outlet: 'Inc42', date: 'February 2026', headline: 'The infrastructure behind a devotional AI product needs more than prompts.', tag: 'Deep Dive' },

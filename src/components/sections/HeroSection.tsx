@@ -89,7 +89,7 @@ export function HeroSection() {
           variants={staggerItem}
           className="text-ink-300 text-lg md:text-xl leading-[1.75] max-w-[640px] mx-auto mb-8"
         >
-          DevBhumi is an AI-powered spiritual companion bringing the wisdom of the Vedas, Upanishads, and 5,000 years of Hindu philosophy to 1.1 billion devotees — in their language, at any hour.
+          Divine Connect is an AI-powered spiritual companion bringing the wisdom of the Vedas, Upanishads, and 5,000 years of Hindu philosophy to 1.1 billion devotees — in their language, at any hour.
         </motion.p>
 
         {/* Feature pills */}

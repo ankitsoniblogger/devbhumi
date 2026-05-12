@@ -18,7 +18,7 @@ const testimonials = [
     location: 'London',
     initials: 'RM',
     color: '#1D9E75',
-    quote: 'As an NRI in London, DevBhumi helps me stay connected to my roots. My kids are learning Sanskrit through the bhajan module.',
+    quote: 'As an NRI in London, Divine Connect helps me stay connected to my roots. My kids are learning Sanskrit through the bhajan module.',
   },
   {
     name: 'Sneha K.',
