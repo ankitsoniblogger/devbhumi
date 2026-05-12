@@ -34,14 +34,14 @@ export function Footer() {
               <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-[#F4D8C1] bg-white shadow-[0_12px_28px_rgba(232,117,42,0.08)]">
                 <Image
                   src="/icon.png"
-                  alt="DevBhumi icon"
+                  alt="Divine Connect icon"
                   width={48}
                   height={48}
                   className="h-full w-full object-cover"
                 />
               </div>
               <div>
-                <div className="text-lg font-semibold tracking-[-0.04em] text-[#3E2723]">DevBhumi</div>
+                <div className="text-lg font-semibold tracking-[-0.04em] text-[#3E2723]">Divine Connect</div>
                 <div className="text-sm text-[#8D6E63]">Seek Guidance. Find Peace.</div>
               </div>
             </div>
@@ -86,7 +86,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-[#ECD8C8] pt-6 text-sm text-[#8D6E63] md:flex-row md:items-center md:justify-between">
-          <p>© 2026 DevBhumi. Built in India for a global spiritual audience.</p>
+          <p>© 2026 Divine Connect (DevBhumi Technologies Pvt. Ltd.). Built in India for a global spiritual audience.</p>
           <p>Product story rebuilt from the Flutter app and admin platform.</p>
         </div>
       </div>

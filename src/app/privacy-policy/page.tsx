@@ -35,7 +35,7 @@ We do not collect sensitive personal data such as biometric identifiers or finan
 • **Service providers**: cloud infrastructure (AWS), analytics (PostHog), customer support tools — bound by data processing agreements
 • **AI model providers**: queries are processed by our AI infrastructure; we do not share personally identifiable metadata with third-party model providers beyond what is technically necessary
 • **Legal authorities**: when required by law, court order, or governmental regulation
-• **Business transfers**: in connection with any merger, sale, or acquisition of DevBhumi — users will be notified before data is transferred to a new controller`,
+• **Business transfers**: in connection with any merger, sale, or acquisition of DevBhumi Technologies Pvt. Ltd. — users will be notified before data is transferred to a new controller`,
   },
   {
     title: 'Data Retention',
@@ -66,11 +66,11 @@ We will respond to verifiable requests within 72 hours and resolve them within 3
   },
   {
     title: 'Children\'s Privacy',
-    body: `DevBhumi is not directed to children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe we have collected data from a child, please contact us at privacy@devbhumi.com and we will delete it promptly.`,
+    body: `Divine Connect is not directed to children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe we have collected data from a child, please contact us at privacy@devbhumi.com and we will delete it promptly.`,
   },
   {
     title: 'Changes to This Policy',
-    body: `We may update this Privacy Policy from time to time. We will notify you of material changes via in-app notification or email at least 14 days before they take effect. Continued use of DevBhumi after the effective date constitutes acceptance of the revised policy.`,
+    body: `We may update this Privacy Policy from time to time. We will notify you of material changes via in-app notification or email at least 14 days before they take effect. Continued use of Divine Connect after the effective date constitutes acceptance of the revised policy.`,
   },
 ]
 
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
             </h1>
             <p className="text-sm text-ink-600">Last updated: April 22, 2026 &middot; Effective: April 22, 2026</p>
             <p className="text-ink-400 mt-4 leading-relaxed">
-              DevBhumi Technologies Pvt. Ltd. (&ldquo;DevBhumi&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your personal data. This policy explains how we collect, use, share, and protect information about you when you use the DevBhumi app and website.
+              DevBhumi Technologies Pvt. Ltd. (operating the app &ldquo;Divine Connect&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your personal data. This policy explains how we collect, use, share, and protect information about you when you use the Divine Connect app and website.
             </p>
           </motion.div>
 

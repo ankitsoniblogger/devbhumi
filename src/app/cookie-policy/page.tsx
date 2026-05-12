@@ -20,7 +20,7 @@ const cookieTypes = [
   {
     type: 'Analytics',
     canOptOut: true,
-    description: 'Help us understand how users interact with DevBhumi so we can improve the experience. We use PostHog with IP anonymisation.',
+    description: 'Help us understand how users interact with Divine Connect so we can improve the experience. We use PostHog with IP anonymisation.',
     examples: ['Page views & session duration', 'Feature engagement', 'Crash reports', 'Funnel analysis'],
   },
   {
@@ -46,7 +46,7 @@ export default function CookiePolicyPage() {
             </h1>
             <p className="text-sm text-ink-600">Last updated: April 22, 2026</p>
             <p className="text-ink-400 mt-4 leading-relaxed">
-              This policy explains what cookies and similar tracking technologies DevBhumi uses, why we use them, and how you can control them.
+              This policy explains what cookies and similar tracking technologies Divine Connect uses, why we use them, and how you can control them.
             </p>
           </motion.div>
 
@@ -88,8 +88,8 @@ export default function CookiePolicyPage() {
           <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="border-t border-border-subtle pt-8 mb-10">
             <h2 className="text-ink-100 font-medium text-lg mb-4">How to manage cookies</h2>
             <div className="text-sm text-ink-400 leading-[1.8] space-y-3">
-              <p>You can manage your cookie preferences at any time via the <span className="text-ink-200">Settings &rarr; Privacy</span> menu in the DevBhumi app.</p>
-              <p>For browser cookies on our website, you can also use your browser&apos;s built-in controls. Note that disabling strictly necessary cookies will prevent you from using core features of DevBhumi.</p>
+              <p>You can manage your cookie preferences at any time via the <span className="text-ink-200">Settings &rarr; Privacy</span> menu in the Divine Connect app.</p>
+              <p>For browser cookies on our website, you can also use your browser&apos;s built-in controls. Note that disabling strictly necessary cookies will prevent you from using core features of Divine Connect.</p>
               <p>To opt out of analytics tracking across the web, visit <span className="text-saffron-400">posthog.com/privacy</span>.</p>
             </div>
           </motion.div>
@@ -97,7 +97,7 @@ export default function CookiePolicyPage() {
           <motion.div variants={sectionReveal} initial="hidden" whileInView="visible" viewport={viewportConfig} className="border-t border-border-subtle pt-8 mb-10">
             <h2 className="text-ink-100 font-medium text-lg mb-4">Third-party cookies</h2>
             <p className="text-sm text-ink-400 leading-[1.8]">
-              Some third-party services integrated into DevBhumi may set their own cookies. These include Razorpay (payment), PostHog (analytics), and YouTube (embedded content). We do not control these third-party cookies; please refer to their respective privacy policies.
+              Some third-party services integrated into Divine Connect may set their own cookies. These include Razorpay (payment), PostHog (analytics), and YouTube (embedded content). We do not control these third-party cookies; please refer to their respective privacy policies.
             </p>
           </motion.div>
 
